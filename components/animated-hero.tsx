@@ -105,7 +105,7 @@ export function AnimatedHero() {
 
       {/* HERO TEXT */}
       <div className="max-w-5xl mx-auto relative z-20 text-center space-y-8 mt-8">
-        <div className="hero-title text-6xl md:text-7xl font-semibold leading-tight">
+        <div className="hero-title text-5xl md:text-7xl font-semibold leading-tight">
           Monitor Every Conversation <br />
           That Matters to Your SaaS
         </div>

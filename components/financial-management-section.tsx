@@ -46,7 +46,7 @@ export function FinancialManagementSection() {
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 px-4 max-w-7xl mx-auto">
+    <section ref={ref} className="py-10 md:py-20 px-4 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, x: -40 }}

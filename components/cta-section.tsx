@@ -82,7 +82,7 @@ export function CTASection() {
   return (
     <section
       ref={ref}
-      className="w-full py-20 md:py-32 px-4 relative flex flex-col justify-center items-center overflow-hidden bg-blue-50"
+      className="w-full py-10 md:py-20 px-4 relative flex flex-col justify-center items-center overflow-hidden bg-blue-50"
     >
       {/* ☁️ CLOUD LEFT */}
       <img

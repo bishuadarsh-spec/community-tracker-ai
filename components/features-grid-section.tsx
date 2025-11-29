@@ -99,7 +99,7 @@ export function FeaturesGridSection() {
     <section
       ref={containerRef}
       id="features"
-      className="py-12 md:py-20 lg:py-32 px-4 max-w-6xl mx-auto"
+      className="py-12 md:py-10 lg:py-20 px-4 max-w-6xl mx-auto"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

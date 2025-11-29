@@ -81,7 +81,7 @@ export function PricingSectionDreelio() {
     <section
       ref={ref}
       id="pricing"
-      className="py-20 md:py-32 px-4 bg-gradient-to-b from-white to-gray-50"
+      className="py-10 md:py-20 px-4 bg-gradient-to-b from-white to-gray-50"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}

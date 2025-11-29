@@ -8,7 +8,7 @@ export function SeamlessDevicesSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-20 md:py-32 px-4 max-w-6xl mx-auto">
+    <section ref={ref} className="py-10 md:py-20 px-4 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

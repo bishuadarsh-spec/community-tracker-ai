@@ -37,14 +37,14 @@ export function Header() {
       <motion.header
         initial={false}
         animate={{
-          width: scrolled ? "min(1000px, calc(100% - 1rem))" : "100%",
+          width: scrolled ? "min(1000px, calc(100% - 0.75rem))" : "100%",
           backgroundColor: scrolled
             ? "rgba(255, 255, 255, 0.9)"
             : "rgba(255, 255, 255, 0)",
-          paddingTop: scrolled ? "0.5rem" : "0.75rem",
-          paddingBottom: scrolled ? "0.5rem" : "0.75rem",
+          paddingTop: scrolled ? "0.45rem" : "0.8rem",
+          paddingBottom: scrolled ? "0.45rem" : "0.8rem",
           borderRadius: scrolled ? "9999px" : "0px",
-          marginTop: scrolled ? "0.5rem" : "0rem",
+          marginTop: scrolled ? "0.4rem" : "0rem",
           backdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
           boxShadow: scrolled
             ? "0 4px 20px rgba(0, 0, 0, 0.08)"
@@ -56,10 +56,10 @@ export function Header() {
             ? "1px solid rgba(230, 230, 230, 0.8)"
             : "1px solid transparent",
         }}
-        className="flex items-center justify-between px-4 sm:px-6 pointer-events-auto"
+        className="flex items-center justify-between px-3 sm:px-5 pointer-events-auto min-h-[58px]"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 min-w-0">
           <div className="w-5 h-5 sm:w-6 sm:h-6 bg-foreground rounded-sm flex-shrink-0" />
           <span className="text-foreground text-base sm:text-lg md:text-xl font-bold whitespace-nowrap">
             Dreelio
@@ -94,17 +94,17 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="h-9 w-9 sm:h-10 sm:w-10"
+              className="h-10 w-10 active:scale-[0.96]"
             >
-              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+              <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
 
           <SheetContent
             side="bottom"
-            className="rounded-t-3xl px-4 pb-8 max-h-[85vh] overflow-y-auto"
+            className="rounded-t-3xl px-4 pb-8 pt-4 max-h-[85vh] overflow-y-auto"
           >
-            <SheetHeader className="mb-6">
+            <SheetHeader className="mb-4">
               <SheetTitle className="text-left text-xl font-bold">
                 Navigation
               </SheetTitle>
