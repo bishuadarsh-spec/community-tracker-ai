@@ -74,9 +74,9 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 min-w-0">
-          <div className="w-5 h-5 sm:w-6 sm:h-6 bg-foreground rounded-sm flex-shrink-0" />
+         
           <span className="text-foreground text-base sm:text-lg md:text-xl font-bold whitespace-nowrap">
-            Dreelio
+            <img src="/logos/nav_logo.png" alt="Community Tracker" className="h-5 sm:h-6 md:h-7 inline-block" />
           </span>
         </Link>
 
@@ -97,7 +97,7 @@ export function Header() {
         <div className="hidden md:block">
           <Link href="/signup">
             <Button className="bg-[#1d1d1f] hover:bg-[#2d2d2f] text-white px-5 lg:px-6 py-2 rounded-full font-semibold shadow-md transition-all text-sm">
-              Try Dreelio free
+              Try Community Tracker free
             </Button>
           </Link>
         </div>
@@ -137,7 +137,7 @@ export function Header() {
 
               <Link href="/signup" className="w-full mt-4">
                 <Button className="w-full bg-[#1d1d1f] hover:bg-[#2d2d2f] text-white px-6 py-6 rounded-full font-semibold text-base shadow-lg">
-                  Try Dreelio free
+                  Try Community Tracker free
                 </Button>
               </Link>
             </nav>

@@ -110,9 +110,14 @@ export function ProjectManagementSection() {
               : { opacity: 0, x: -40, scale: 0.95 }
           }
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-          className="bg-gradient-to-br from-[#95c6f6] to-[#f8e3d0] rounded-3xl p-6 shadow-2xl"
+         
         >
-          <div className="bg-white rounded-2xl p-6 space-y-4">
+          <img
+            src="/images/project_manage.jpg"
+            alt="Project Management Dashboard"
+            className=""
+          />
+          {/* <div className="bg-white rounded-2xl p-6 space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold text-gray-900">Projects</h3>
               <button className="text-gray-400 hover:text-gray-600">⊕</button>
@@ -193,7 +198,7 @@ export function ProjectManagementSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Right side - Content and Features */}
@@ -222,7 +227,7 @@ export function ProjectManagementSection() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-colors"
           >
-            Try Dreelio free
+            Try Community Tracker free
           </motion.button>
 
           <motion.div className="grid grid-cols-2 gap-4">

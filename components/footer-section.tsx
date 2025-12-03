@@ -16,7 +16,7 @@ export function FooterSection() {
               {/* Logo + Name */}
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 bg-black rounded-full" />
-                <h2 className="text-2xl font-bold text-foreground">Dreelio</h2>
+                <h2 className="text-2xl font-bold text-foreground">Community Tracker</h2>
               </div>
 
               <p className="text-gray-700 leading-relaxed max-w-sm">
@@ -64,7 +64,7 @@ export function FooterSection() {
           {/* Bottom Row */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-700 text-sm">
-              © 2025 Dreelio. 
+              © 2025 Community Tracker. 
             </p>
 
           

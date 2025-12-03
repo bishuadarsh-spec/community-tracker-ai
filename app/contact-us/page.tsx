@@ -76,7 +76,7 @@ export default function ContactUsPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Have questions about Dreelio? Contact us and we'll be happy to help.
+            Have questions about Community Tracker? Contact us and we'll be happy to help.
           </motion.p>
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function ContactUsPage() {
                 >
                   <option value="select">Select...</option>
                   <option value="yes">Yes, I'm an existing customer</option>
-                  <option value="no">No, I'm new to Dreelio</option>
+                  <option value="no">No, I'm new to Community Tracker</option>
                 </select>
               </motion.div>
 
@@ -213,7 +213,7 @@ export default function ContactUsPage() {
               <p className="text-3xl font-bold text-blue-600 mb-2">15.2K</p>
               <p className="text-muted-foreground text-sm mb-6">FOLLOWERS</p>
               <p className="text-muted-foreground mb-6">
-                Stay updated on new features and discover how others are using Dreelio.
+                Stay updated on new features and discover how others are using Community Tracker.
               </p>
               <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-full font-semibold">
                 Follow us
@@ -233,7 +233,7 @@ export default function ContactUsPage() {
               <p className="text-3xl font-bold text-red-600 mb-2">32K</p>
               <p className="text-muted-foreground text-sm mb-6">SUBSCRIBERS</p>
               <p className="text-muted-foreground mb-6">
-                Tips, tutorials, and in-depth feature guides to inspire and enhance your Dreelio workflow.
+                Tips, tutorials, and in-depth feature guides to inspire and enhance your Community Tracker workflow.
               </p>
               <Button className="w-full bg-red-600 text-white hover:bg-red-700 rounded-full font-semibold">
                 Subscribe
@@ -253,7 +253,7 @@ export default function ContactUsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              "Dreelio is by far the best agency tool I have ever used"
+              "Community Tracker is by far the best agency tool I have ever used"
             </h2>
           </motion.div>
 
@@ -323,9 +323,9 @@ export default function ContactUsPage() {
           className="max-w-2xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Ready to get started</h2>
-          <p className="text-muted-foreground mb-8">Download Dreelio for free. No credit card required.</p>
+          <p className="text-muted-foreground mb-8">Download Community Tracker for free. No credit card required.</p>
           <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all">
-            Try Freelio free
+            Try Community Tracker free
           </Button>
         </motion.div>
       </section>

@@ -12,7 +12,7 @@ export function CommunitySection() {
     {
       platform: "X/Twitter",
       followers: "15.2K followers",
-      description: "Stay updated on new features and discover how others are using Dreelio.",
+      description: "Stay updated on new features and discover how others are using Community Tracker.",
       buttonText: "Follow us",
       bgColor: "from-blue-50 to-blue-100",
       link: "https://x.com",
@@ -20,7 +20,7 @@ export function CommunitySection() {
     {
       platform: "YouTube",
       followers: "32k subscribers",
-      description: "Tips, tutorials, and in-depth feature guides to inspire and enhance your Dreelio workflow.",
+      description: "Tips, tutorials, and in-depth feature guides to inspire and enhance your Community Tracker workflow.",
       buttonText: "Subscribe",
       bgColor: "from-red-50 to-red-100",
       link: "https://youtube.com",

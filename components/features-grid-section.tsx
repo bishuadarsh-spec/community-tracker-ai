@@ -157,7 +157,7 @@ export function FeaturesGridSection() {
                 <div className="w-5 h-5 bg-white rounded-full"></div>
               </div>
               <span className="text-xs md:text-sm font-medium text-foreground whitespace-nowrap">
-                Hide Dreelio branding
+                Hide Community Tracker branding
               </span>
             </label>
             <div className="flex gap-2 sm:ml-auto">
@@ -184,7 +184,7 @@ export function FeaturesGridSection() {
 
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
             Personalize every detail. From branding and interface layout to
-            colors and menus, so Dreelio feels like an extension of your brand.
+            colors and menus, so Community Tracker feels like an extension of your brand.
           </p>
         </motion.div>
 
@@ -239,7 +239,7 @@ export function FeaturesGridSection() {
           </div>
 
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            Seamless integrations. Plug Dreelio into the tools you love. Set up
+            Seamless integrations. Plug Community Tracker into the tools you love. Set up
             automations, sync your data, and make your systems work smarter
             together.
           </p>

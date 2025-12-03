@@ -66,7 +66,7 @@ export function FinancialManagementSection() {
           </p>
 
           <button className="bg-black text-white px-8 py-3 rounded-full font-semibold mb-12 hover:bg-gray-800 transition-colors">
-            Try Dreelio free
+            Try Community Tracker free
           </button>
 
           <motion.div
@@ -94,12 +94,16 @@ export function FinancialManagementSection() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="bg-gradient-to-br from-[#95c6f6] to-[#f8e3d0]  rounded-3xl p-6"
         >
-          <div className="bg-white rounded-3xl p-8">
+          <img
+            src="/images/project_budget.jpg"
+            alt="Financial Management Dashboard"
+            className=""
+          />
+          {/* <div className="bg-white rounded-3xl p-8">
             <h3 className="text-2xl font-bold text-foreground mb-8">
               Project budget
             </h3>
 
-            {/* Metrics Grid */}
             <div className="grid grid-cols-2 gap-8 mb-8">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -157,7 +161,7 @@ export function FinancialManagementSection() {
 
             <hr className="my-6" />
 
-            {/* Analytics Section */}
+           
             <h4 className="font-bold text-foreground mb-4">Analytics</h4>
             <div className="flex gap-6 mb-4">
               <div className="flex items-center gap-2">
@@ -173,7 +177,7 @@ export function FinancialManagementSection() {
               </div>
             </div>
 
-            {/* Chart */}
+           
             <ResponsiveContainer width="100%" height={200}>
               <AreaChart data={chartData}>
                 <defs>
@@ -217,7 +221,7 @@ export function FinancialManagementSection() {
                 />
               </AreaChart>
             </ResponsiveContainer>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

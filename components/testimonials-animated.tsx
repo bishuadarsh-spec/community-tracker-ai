@@ -76,7 +76,7 @@ export function TestimonialsAnimated() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-          “Dreelio is by far the best agency tool I have ever used”
+          Community Tracker is by far the best agency tool I have ever used”
         </h2>
         <div className="flex justify-center">
           <Avatar className="mr-3">
