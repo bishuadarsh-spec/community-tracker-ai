@@ -95,11 +95,15 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <Link href="/signup">
+          <a
+            href="https://calendly.com/adarsh-ilu/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button className="bg-[#1d1d1f] hover:bg-[#2d2d2f] text-white px-5 lg:px-6 py-2 rounded-full font-semibold shadow-md transition-all text-sm">
               Try Community Tracker free
             </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu */}
@@ -135,11 +139,15 @@ export function Header() {
                 </Link>
               ))}
 
-              <Link href="/signup" className="w-full mt-4">
+              <a
+            href="https://calendly.com/adarsh-ilu/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
                 <Button className="w-full bg-[#1d1d1f] hover:bg-[#2d2d2f] text-white px-6 py-6 rounded-full font-semibold text-base shadow-lg">
                   Try Community Tracker free
                 </Button>
-              </Link>
+              </a>
             </nav>
           </SheetContent>
         </Sheet>

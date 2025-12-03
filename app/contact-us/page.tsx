@@ -324,9 +324,15 @@ export default function ContactUsPage() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Ready to get started</h2>
           <p className="text-muted-foreground mb-8">Download Community Tracker for free. No credit card required.</p>
+          <a
+            href="https://calendly.com/adarsh-ilu/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all">
             Try Community Tracker free
           </Button>
+          </a>
         </motion.div>
       </section>
 

@@ -221,7 +221,11 @@ export function ProjectManagementSection() {
               organized and clients stay confident.
             </p>
           </div>
-
+          <a
+            href="https://calendly.com/adarsh-ilu/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -229,6 +233,7 @@ export function ProjectManagementSection() {
           >
             Try Community Tracker free
           </motion.button>
+          </a>
 
           <motion.div className="grid grid-cols-2 gap-4">
             {features.map((feature, index) => (

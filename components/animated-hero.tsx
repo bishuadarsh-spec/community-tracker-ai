@@ -118,7 +118,11 @@ export function AnimatedHero() {
 
         <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center pt-6">
           {/* Primary Button */}
-          <Link href="/signup">
+          <a
+            href="https://calendly.com/adarsh-ilu/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               className="
         px-8 py-6 text-base font-bold rounded-full
@@ -131,7 +135,7 @@ export function AnimatedHero() {
             >
               Start Tracking for Free
             </Button>
-          </Link>
+          </a>
 
           {/* Outline Button */}
           <Link href="#features">
@@ -159,9 +163,9 @@ export function AnimatedHero() {
           className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
         >
           <img
-            src="/freelance-business-dashboard-with-analytics-charts.jpg"
+            src="/images/dash.jpg"
             alt="Dashboard"
-            className="w-full h-full object-cover"
+            className="w-full h-full "
           />
         </div>
       </div>

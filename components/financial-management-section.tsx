@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { XAxis, YAxis, ResponsiveContainer, Area, AreaChart } from "recharts";
+import { Button } from "./ui/button";
 
 export function FinancialManagementSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -65,9 +66,15 @@ export function FinancialManagementSection() {
             automated and tax-friendly.
           </p>
 
-          <button className="bg-black text-white px-8 py-3 rounded-full font-semibold mb-12 hover:bg-gray-800 transition-colors">
-            Try Community Tracker free
-          </button>
+          <a
+            href="https://calendly.com/adarsh-ilu/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all">
+              Try Community Tracker free
+            </Button>
+          </a>
 
           <motion.div
             variants={containerVariants}
