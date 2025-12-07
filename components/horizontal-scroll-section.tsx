@@ -39,7 +39,7 @@ export default function HorizontalScrollSection() {
       title: "Nurture leads with automation",
       description:
         "Build lasting relationships through intelligent email sequences and personalized touchpoints",
-      image: "/images/scroll2.jpg",
+      image: "/images/scroll1.png",
       link: "#nurture-leads",
     },
     {
@@ -153,8 +153,9 @@ export default function HorizontalScrollSection() {
                   src={card.image}
                   alt={card.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain object-top"
                 />
+
                 <div className=" inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 

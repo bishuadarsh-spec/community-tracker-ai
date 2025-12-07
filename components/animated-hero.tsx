@@ -163,7 +163,7 @@ export function AnimatedHero() {
           className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
         >
           <img
-            src="/freelance-business-dashboard-with-analytics-charts.jpg "
+            src="/hero.png" // ← replace path"
             alt="Dashboard"
             className="w-full h-full "
           />
