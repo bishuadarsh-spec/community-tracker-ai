@@ -80,7 +80,7 @@ export function AnimatedHero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen bg-gradient-to-b from-[#afd8f7] via-[#F5F8FB] to-[#EBD9CC] pt-20 px-4 overflow-hidden"
+      className="relative  bg-gradient-to-b from-[#afd8f7] via-[#F5F8FB] to-[#EBD9CC] pt-20 px-4 overflow-hidden"
     >
       {/* HEADER */}
       {/* <div className="absolute top-0 left-0 right-0 z-30">
