@@ -51,7 +51,7 @@ export default function BlogPostContent({ post, includes }: BlogPostContentProps
       case 'paragraph':
         if (!node.content || node.content.length === 0) return <br />;
         return (
-          <p className="mb-6 text-gray-700 text-lg leading-relaxed">
+          <p className="mb-3 text-gray-700 text-lg leading-relaxed">
             {node.content.map((child, i) => (
               <React.Fragment key={i}>{renderContent(child)}</React.Fragment>
             ))}
@@ -87,7 +87,7 @@ export default function BlogPostContent({ post, includes }: BlogPostContentProps
 
       case 'unordered-list':
         return (
-          <ul className="space-y-3 mb-6 ml-6">
+          <ul className="space-y-3 mb-3 ml-6">
             {node.content?.map((child, i) => (
               <React.Fragment key={i}>{renderContent(child)}</React.Fragment>
             ))}
@@ -96,7 +96,7 @@ export default function BlogPostContent({ post, includes }: BlogPostContentProps
 
       case 'ordered-list':
         return (
-          <ol className="space-y-3 mb-6 ml-6 list-decimal">
+          <ol className="space-y-3 mb-3 ml-6 list-decimal">
             {node.content?.map((child, i) => (
               <React.Fragment key={i}>{renderContent(child)}</React.Fragment>
             ))}
