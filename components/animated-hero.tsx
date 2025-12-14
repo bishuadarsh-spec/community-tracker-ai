@@ -117,7 +117,7 @@ export function AnimatedHero() {
         </p>
 
         <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center pt-6">
-          {/* Primary Button */}
+      
           <a
             href="https://calendly.com/adarsh-ilu/30min"
             target="_blank"
@@ -156,14 +156,13 @@ export function AnimatedHero() {
         </div>
       </div>
 
-      {/* IMAGE SECTION */}
       <div className="mt-20 max-w-3xl mx-auto relative h-80 md:h-[350px]">
         <div
           ref={imageWrapperRef}
           className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
         >
           <img
-            src="/tyty.png" // ← replace path"
+            src="/tyty.png" 
             alt="Dashboard"
             className="w-full h-full "
           />
