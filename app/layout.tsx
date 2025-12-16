@@ -1,13 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import LenisProvider from '@/components/LenisProvider'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
+import { openRunde } from './fonts'
 
 export const metadata: Metadata = {
   title: 'CommunityTracker.ai - Empowering Communities with AI',
@@ -24,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={openRunde.variable}>
+      <body>
         <LenisProvider>{children}</LenisProvider>
         <Analytics />
       </body>

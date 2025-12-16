@@ -18,7 +18,11 @@ const config = {
         "2xl": "1400px",
       },
     },
-    extend: {
+extend: {
+  fontFamily: {
+    sans: ['var(--font-open-runde)', 'ui-sans-serif', 'system-ui'],
+    runde: ['var(--font-open-runde)'],
+  },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

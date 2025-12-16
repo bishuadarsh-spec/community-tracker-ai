@@ -46,9 +46,10 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+body {
+  @apply bg-background text-foreground font-sans;
+}
+
    html, body {
     @apply overflow-x-hidden max-w-full;
   }

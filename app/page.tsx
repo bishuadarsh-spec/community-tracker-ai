@@ -14,6 +14,7 @@ import StackSlider from "@/components/StackSlider";
 import { Header } from "@/components/header";
 import HorizontalScrollSection from "@/components/horizontal-scroll-section";
 import { FAQSection } from "@/components/faq-section";
+import CommunityPlatforms from "@/components/CommunityPlatform";
 
 
 
@@ -24,7 +25,8 @@ export default function LandingPage() {
       <div className="min-h-screen bg-background">
         <AnimatedHero />
         {/* <TrustedBySection /> */}
-        <StackSlider />
+        {/* <StackSlider /> */}
+        <CommunityPlatforms />
         {/* <SeamlessDevicesSection /> */}
 
         <HorizontalScrollSection />
@@ -33,7 +35,7 @@ export default function LandingPage() {
         <FeaturesGridSection />
         <TestimonialsAnimated />
         <PricingSectionDreelio />
-        <BlogSection />
+        {/* <BlogSection /> */}
         <CommunitySection />
         <FAQSection />
         <CTASection />
