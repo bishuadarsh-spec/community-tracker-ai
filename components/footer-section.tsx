@@ -15,8 +15,9 @@ export function FooterSection() {
             <div className="space-y-6">
               {/* Logo + Name */}
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 bg-black rounded-full" />
-                <h2 className="text-2xl font-bold text-foreground">Community Tracker</h2>
+               <span className="text-foreground text-base sm:text-lg md:text-xl font-bold whitespace-nowrap">
+            <img src="/logos/nav_logo.png" alt="Community Tracker" className="h-6 md:h-10 inline-block" />
+          </span>
               </div>
 
               <p className="text-gray-700 leading-relaxed max-w-sm">
