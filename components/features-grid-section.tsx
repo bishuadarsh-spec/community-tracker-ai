@@ -107,12 +107,12 @@ const featureBottomItems = [
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200"
+          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
         >
          <img
             src="/images/2nd.png"
             alt="Personalization Demo"
-            className="w-full h-auto "
+            className="w-full h-auto rounded-2xl"
           />
         </motion.div>
 
@@ -121,12 +121,12 @@ const featureBottomItems = [
           initial={{ opacity: 0, x: 20 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 overflow-hidden"
+          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all overflow-hidden"
         >
        <img
             src="/images/monitors.png"
             alt="Integrations Demo"
-            className="w-full h-auto "
+            className="w-full h-auto rounded-2xl"
           />
 
        
@@ -150,7 +150,7 @@ const featureBottomItems = [
       <img
         src={item.src}
         alt={item.alt}
-        className="w-full h-auto "
+        className="w-full h-auto rounded-2xl"
       />
     </motion.div>
   ))}
