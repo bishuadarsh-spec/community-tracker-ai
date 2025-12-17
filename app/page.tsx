@@ -15,6 +15,7 @@ import { Header } from "@/components/header";
 import HorizontalScrollSection from "@/components/horizontal-scroll-section";
 import { FAQSection } from "@/components/faq-section";
 import CommunityPlatforms from "@/components/CommunityPlatform";
+import ScrollAnimationComponent from "@/components/HowItWorks";
 
 
 
@@ -29,7 +30,8 @@ export default function LandingPage() {
         <CommunityPlatforms />
         {/* <SeamlessDevicesSection /> */}
 
-        <HorizontalScrollSection />
+        {/* <HorizontalScrollSection /> */}
+        <ScrollAnimationComponent />
         <ProjectManagementSection />
         <FinancialManagementSection />
         <FeaturesGridSection />
