@@ -132,7 +132,7 @@ const ScrollAnimationComponent = () => {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-full h-full bg-white rounded-3xl flex items-center justify-center">
-                 <img src="/new1.png" alt=" leads" className="w-[95%] h-[95%] rounded-3xl" />
+                 <img src="/new1.png" alt=" leads" className="w-[95%] h-full rounded-3xl" />
                 </div>
               </div>
 
@@ -143,7 +143,7 @@ const ScrollAnimationComponent = () => {
                 style={{ opacity: 0 }}
               >
                 <div className="w-full h-full  rounded-3xl  flex items-center justify-center">
-                  <img src="/new2.png" alt="Connect Communities" className="w-[95%] h-[95%] rounded-3xl" />
+                  <img src="/new2.png" alt="Connect Communities" className="w-[95%] h-full rounded-3xl" />
                 </div>
               </div>
 
@@ -154,7 +154,7 @@ const ScrollAnimationComponent = () => {
                 style={{ opacity: 0 }}
               >
                 <div className="w-full h-full  rounded-3xl   flex items-center justify-center ">
-                    <img src="/new3.png" alt="Get Real-Time Alerts" className="w-[95%] h-[95%] rounded-3xl" />
+                    <img src="/new3.png" alt="Get Real-Time Alerts" className="w-[95%] h-full rounded-3xl" />
                 </div>
               </div>
             </div>
