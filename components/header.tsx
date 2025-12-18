@@ -108,7 +108,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         <Sheet>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="md:hidden ">
             <Button
               variant="ghost"
               size="icon"
@@ -119,7 +119,7 @@ export function Header() {
           </SheetTrigger>
 
           <SheetContent
-            side="bottom"
+            side="top"
             className="rounded-t-3xl px-4 pb-8 pt-4 max-h-[85vh] overflow-y-auto"
           >
             <SheetHeader className="mb-4">
