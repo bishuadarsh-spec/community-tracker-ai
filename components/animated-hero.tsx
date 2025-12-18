@@ -105,7 +105,7 @@ export function AnimatedHero() {
 
      
       <div className="max-w-5xl mx-auto relative z-20 text-center space-y-8 mt-8">
-        <div className="hero-title text-5xl md:text-7xl font-semibold leading-tight">
+        <div className="hero-title text-4xl md:text-7xl font-semibold leading-tight">
           Monitor Every <br/> Conversation 
           That <br/> Matters  to Your SaaS
         </div>
@@ -156,7 +156,7 @@ export function AnimatedHero() {
         </div>
       </div>
 
-      <div className="mt-20 max-w-3xl mx-auto relative h-80 md:h-[350px]">
+      <div className="mt-20 max-w-sm md:max-w-3xl mx-auto relative h-60 md:h-[350px]">
         <div
           ref={imageWrapperRef}
           className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"

@@ -136,7 +136,7 @@ const ScrollAnimationComponent = () => {
           {/* Section 1 - Mobile */}
           <div className="min-h-[80vh] flex flex-col items-center justify-center p-6">
             <div className="w-full max-w-md mb-4">
-              <div className="bg-white rounded-3xl p-6 flex items-center justify-center h-[300px] md:h-[400px] mb-8">
+              <div className="bg-white rounded-3xl flex items-center justify-center h-[300px] md:h-[400px] mb-8">
                 <img 
                   src="/new1.png" 
                   alt="leads" 
@@ -166,7 +166,7 @@ const ScrollAnimationComponent = () => {
           {/* Section 2 - Mobile */}
           <div className="min-h-[80vh] flex flex-col items-center justify-center p-6">
             <div className="w-full max-w-md mb-4">
-              <div className="bg-white rounded-3xl p-6 flex items-center justify-center h-[300px] md:h-[400px] mb-8">
+              <div className="bg-white rounded-3xl  flex items-center justify-center h-[300px] md:h-[400px] mb-8">
                 <img 
                   src="/new2.png" 
                   alt="Connect Communities" 
@@ -196,7 +196,7 @@ const ScrollAnimationComponent = () => {
           {/* Section 3 - Mobile */}
           <div className="min-h-[80vh] flex flex-col items-center justify-center p-6">
             <div className="w-full max-w-md mb-4">
-              <div className="bg-white rounded-3xl p-6 flex items-center justify-center h-[300px] md:h-[400px] mb-8">
+              <div className="bg-white rounded-3xl  flex items-center justify-center h-[300px] md:h-[400px] mb-8">
                 <img 
                   src="/new3.png" 
                   alt="Get Real-Time Alerts" 
@@ -258,7 +258,7 @@ const ScrollAnimationComponent = () => {
                 className="absolute inset-0 hidden items-center justify-center"
                 style={{ opacity: 0 }}
               >
-                <div className="w-[95%] h-full rounded-3xl flex items-center justify-center">
+                <div className="w-full h-full rounded-3xl flex items-center justify-center">
                   <img src="/new3.png" alt="Get Real-Time Alerts" className="w-[95%] h-full rounded-3xl object-contain" />
                 </div>
               </div>
