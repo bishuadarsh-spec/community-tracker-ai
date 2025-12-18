@@ -112,7 +112,7 @@ export function ProjectManagementSection() {
           <img
             src="/images/project_manage.jpg"
             alt="Project Management Dashboard"
-            className=""
+            className=" rounded-3xl "
           />
           {/* <div className="bg-white rounded-2xl p-6 space-y-4">
             <div className="flex items-center justify-between">

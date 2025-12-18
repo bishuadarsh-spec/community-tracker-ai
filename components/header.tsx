@@ -96,12 +96,12 @@ export function Header() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <a
-            href="https://calendly.com/adarsh-ilu/30min"
+            href="http://app.communitytracker.ai/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button className="bg-[#1d1d1f] hover:bg-[#2d2d2f] text-white px-5 lg:px-6 py-2 rounded-full font-semibold shadow-md transition-all text-sm">
-              Try Community Tracker free
+              Sign Up
             </Button>
           </a>
         </div>
@@ -140,12 +140,12 @@ export function Header() {
               ))}
 
               <a
-            href="https://calendly.com/adarsh-ilu/30min"
+            href="http://app.communitytracker.ai/"
             target="_blank"
             rel="noopener noreferrer"
           >
                 <Button className="w-full bg-[#1d1d1f] hover:bg-[#2d2d2f] text-white px-6 py-6 rounded-full font-semibold text-base shadow-lg">
-                  Try Community Tracker free
+                  Sign Up
                 </Button>
               </a>
             </nav>

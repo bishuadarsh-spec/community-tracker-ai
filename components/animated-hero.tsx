@@ -138,7 +138,7 @@ export function AnimatedHero() {
           </a>
 
           {/* Outline Button */}
-          <Link href="#features">
+          <Link href="https://calendly.com/adarsh-ilu/30min" target="_blank" rel="noopener noreferrer">
             <Button
               variant="outline"
               className="

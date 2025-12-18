@@ -117,7 +117,7 @@ export function FinancialManagementSection() {
           <img
             src="/images/project_budget.jpg"
             alt="Financial Management Dashboard"
-            className=""
+            className=" rounded-3xl "
           />
           {/* <div className="bg-white rounded-3xl p-8">
             <h3 className="text-2xl font-bold text-foreground mb-8">
