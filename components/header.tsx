@@ -15,6 +15,8 @@ import {
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +40,9 @@ export function Header() {
   initial={false}
   animate={{
     width: scrolled ? "min(1000px, calc(100% - 0.75rem))" : "100%",
-    backgroundColor: scrolled
+    backgroundColor:
+    
+    scrolled
       ? "rgba(255, 255, 255, 0.45)"   // stronger tint
       : "rgba(255, 255, 255, 0)",
 
@@ -106,51 +110,66 @@ export function Header() {
           </a>
         </div>
 
-        {/* Mobile Menu */}
-        <Sheet>
-          <SheetTrigger asChild className="md:hidden ">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-10 w-10 active:scale-[0.96]"
-            >
-              <Menu className="h-6 w-6" />
-            </Button>
-          </SheetTrigger>
+  {/* Mobile Menu Button */}
+<button
+  onClick={() => setMobileOpen(true)}
+  className="md:hidden h-10 w-10 flex items-center justify-center active:scale-95"
+>
+  <Menu className="h-6 w-6" />
+</button>
 
-          <SheetContent
-            side="top"
-            className="rounded-t-3xl px-4 pb-8 pt-4 max-h-[85vh] overflow-y-auto"
-          >
-            <SheetHeader className="mb-4">
-              <SheetTitle className="text-left text-xl font-bold">
-                Navigation
-              </SheetTitle>
-            </SheetHeader>
+{/* Mobile Fullscreen Navigation */}
+{mobileOpen && (
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.25 }}
+    className="fixed inset-0 z-[10000] bg-white md:hidden"
+  >
+    {/* Top Bar */}
+    <div className="flex items-center justify-between px-4 py-4 border-b">
+      <img
+        src="/logos/nav_logo.png"
+        alt="Community Tracker"
+        className="h-6"
+      />
 
-            <nav className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-foreground text-base py-3 px-3 rounded-lg hover:bg-gray-100 transition-all font-medium"
-                >
-                  {item.name}
-                </Link>
-              ))}
+      <button
+        onClick={() => setMobileOpen(false)}
+        className="text-md font-semibold"
+      >
+       ✕
+      </button>
+    </div>
 
-              <a
-            href="http://app.communitytracker.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-                <Button className="w-full bg-[#1d1d1f] hover:bg-[#2d2d2f] text-white px-6 py-6 rounded-full font-semibold text-base shadow-lg">
-                  Sign Up
-                </Button>
-              </a>
-            </nav>
-          </SheetContent>
-        </Sheet>
+    {/* Navigation */}
+    <nav className="flex flex-col px-4 pt-6 gap-2 bg-gray-50 ">
+      {navItems.map((item) => (
+        <Link
+          key={item.name}
+          href={item.href}
+          onClick={() => setMobileOpen(false)}
+          className="text-lg font-medium py-4 px-3 rounded-xl hover:bg-gray-100 transition"
+        >
+          {item.name}
+        </Link>
+      ))}
+
+      <a
+        href="http://app.communitytracker.ai/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6"
+      >
+        <Button className="w-full py-6 rounded-full text-base font-semibold mb-3">
+          Sign Up
+        </Button>
+      </a>
+    </nav>
+  </motion.div>
+)}
+
       </motion.header>
     </div>
   );
