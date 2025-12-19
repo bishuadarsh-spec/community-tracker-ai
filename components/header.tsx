@@ -162,7 +162,7 @@ export function Header() {
         rel="noopener noreferrer"
         className="mt-6"
       >
-        <Button className="w-full py-6 rounded-full text-base font-semibold mb-3">
+        <Button className="w-full bg-black py-6 rounded-full text-base text-white font-semibold mb-3">
           Sign Up
         </Button>
       </a>
