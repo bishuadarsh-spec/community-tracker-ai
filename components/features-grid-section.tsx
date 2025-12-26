@@ -95,9 +95,9 @@ const featureBottomItems = [
         className="text-center mb-8 md:mb-12 lg:mb-16"
       >
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight px-4">
-          Powerful Features
+          See what matters, instantly
         </h2>
-        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">Everything you need to stay on top of online conversations</p>
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">Channel insights: Know which communities bring real opportunities. Conversation quality: Spot buying intent, problems, and comparisons fast. Thread tracking: Follow discussions as they grow. Saved views: Leads • Competitors • Support • Content ideas. Try CommunityTracker free.</p>
       </motion.div>
 
       {/* Top Two Feature Cards */}

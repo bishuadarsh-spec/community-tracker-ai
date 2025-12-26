@@ -106,14 +106,13 @@ export function AnimatedHero() {
      
       <div className="max-w-5xl mx-auto relative z-20 text-center space-y-8 mt-8">
         <div className="hero-title text-4xl md:text-7xl font-semibold leading-tight">
-          Monitor Every <br/> Conversation 
-          That <br/> Matters  to Your SaaS
+          Never miss conversations that matter
         </div>
 
         <p className="hero-desc text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Track keywords, community discussions, and competitor mentions across
-          Reddit, Hacker News, Slack groups, Twitter, Discord, and niche forums
-          — all from one dashboard.
+          Track keywords, brand mentions, competitors, and category discussions across Reddit, Slack, Discord, X, GitHub, and more — all in one place.
+          <br />
+          Only relevant conversations. No noise.
         </p>
 
         <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center pt-6">
@@ -133,7 +132,7 @@ export function AnimatedHero() {
         active:scale-[0.98]
       "
             >
-              Start Tracking for Free
+              Start tracking for free
             </Button>
           </a>
 
@@ -150,7 +149,7 @@ export function AnimatedHero() {
         active:scale-[0.98]
       "
             >
-              See Live Demo
+              See live demo
             </Button>
           </Link>
         </div>

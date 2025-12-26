@@ -10,18 +10,18 @@ export function CommunitySection() {
 
   const communities = [
     {
-      platform: "X/Twitter",
-      followers: "15.2K followers",
-      description: "Stay updated on new features and discover how others are using Community Tracker.",
-      buttonText: "Follow us",
+      platform: "Who it’s for",
+      followers: "Marketers • Founders • Agencies",
+      description: "Marketers: find demand and trends • Founders: monitor brand mentions • Agencies: track multiple clients",
+      buttonText: "Start tracking for free",
       bgColor: "from-blue-50 to-blue-100",
       link: "https://x.com",
     },
     {
-      platform: "YouTube",
-      followers: "32k subscribers",
-      description: "Tips, tutorials, and in-depth feature guides to inspire and enhance your Community Tracker workflow.",
-      buttonText: "Subscribe",
+      platform: "Built for teams",
+      followers: "Community • Product • Support",
+      description: "Community managers: stay present • Product teams: collect feedback • Support teams: catch issues early",
+      buttonText: "See live demo",
       bgColor: "from-red-50 to-red-100",
       link: "https://youtube.com",
     },
@@ -54,7 +54,7 @@ export function CommunitySection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Stay in the loop</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Who it’s for</h2>
       </motion.div>
 
       <motion.div
