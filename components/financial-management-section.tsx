@@ -41,10 +41,14 @@ export function FinancialManagementSection() {
   ];
 
   const features = [
-    { label: "Invoicing", icon: FileText },
-    { label: "Budgets", icon: Wallet },
-    { label: "Forecasting", icon: LineChart },
-    { label: "Integrations", icon: Link2 },
+    { label: "Keyword and competitor tracking", icon: FileText },
+    { label: "Advanced noise filtering", icon: Wallet },
+    { label: "Real-time alerts", icon: LineChart },
+    { label: "Quick summaries", icon: Link2 },
+    { label: "Team notes and tags", icon: FileText },
+    { label: "Shared inbox for follow-ups", icon: Wallet },
+    { label: "Exports and integrations", icon: LineChart },
+    { label: "Searchable history", icon: Link2 },
   ];
 
   return (
@@ -56,19 +60,13 @@ export function FinancialManagementSection() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-slate-500 font-semibold text-xs mb-6 uppercase tracking-widest">
-            Financial Management
+            Key features
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Stay on top of your revenue with real-time activity tracking
+            What you get
           </h2>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-            Your latest activity shows steady engagement across your ongoing
-            leads. From SaaS marketing insights to community-driven tasks,
-            everything you’re working on updates instantly—giving you a clear
-            view of performance, progress, and earnings. With automated
-            tracking, expense logging, and smart financial tools, you always
-            know where your money is coming from and which tasks are performing
-            best.
+            Find high-intent posts early. Avoid endless scrolling. Understand context, not just links. Reply while conversations are still active. Keep an eye on competitors automatically.
           </p>
 
           <a
