@@ -6,34 +6,34 @@ import { ChevronDown } from "lucide-react";
 
 const faqData = [
   {
-    question: "What is Pointer and who is it for?",
+    question: "Who is CommunityTracker for?",
     answer:
-      "Pointer is an AI-powered development platform designed for developers, teams, and organizations who want toaccelerate their coding workflow. It's perfect for both individual developers looking to enhance their productivity and teams seeking seamless collaboration tools.",
+      "Any business, creator, agency, or team that needs to know when they are mentioned online. If your conversations happen across Reddit, Discord, Slack, X, GitHub, Product Hunt, Stack Overflow, or forums, this keeps them in one place.",
   },
   {
-    question: "How does Pointer's AI code review work?",
+    question: "What sources can I monitor?",
     answer:
-      "Our AI analyzes your code in real-time, providing intelligent suggestions for improvements, catching potential bugs, and ensuring best practices. It learns from your coding patterns and adapts to your team's standards, making code reviews faster and more consistent.",
+      "Track keywords, brand names, competitors, and category terms across Reddit, Hacker News, Slack communities, Discord, X (Twitter), GitHub, Product Hunt, Stack Overflow, and niche forums.",
   },
   {
-    question: "Can I integrate Pointer with my existing tools?",
+    question: "How do alerts work?",
     answer:
-      "Yes! Pointer offers one-click integrations with popular development tools including GitHub, GitLab, VS Code, Slack, and many more. Our MCP connectivity allows you to easily manage and configure server access across your entire development stack.",
+      "You can send real-time alerts to Slack, email, or view them in the dashboard. Use noise filters and sentiment cues to reduce irrelevant posts and surface what matters.",
   },
   {
-    question: "What's included in the free plan?",
+    question: "Does it include AI summaries?",
     answer:
-      "The free plan includes real-time code suggestions, basic integrations, single MCP server connection, up to 2 AI coding agents, and Vercel deployments with Pointer branding. It's perfect for individual developers getting started.",
+      "Yes. Every mention comes with a quick AI summary so you know who said what, where, and why it matters before you click through.",
   },
   {
-    question: "How do parallel coding agents work?",
+    question: "How often is data refreshed?",
     answer:
-      "Our parallel coding agents can work on different parts of your codebase simultaneously, solving complex problems faster than traditional single-threaded approaches. You can launch multiple agents to handle different tasks like bug fixes, feature development, and code optimization concurrently.",
+      "Mentions are pulled continuously. Starter includes daily alerts; Pro includes real-time alerts with instant Slack and email routing.",
   },
   {
-    question: "Is my code secure with Pointer?",
+    question: "Can I change what I track?",
     answer:
-      "Absolutely. We use enterprise-grade security measures including end-to-end encryption, secure data transmission, and compliance with industry standards. Your code never leaves your secure environment without your explicit permission, and we offer on-premises deployment options for enterprise customers.",
+      "Yes. Add or edit keywords, brand names, competitors, and sources anytime. You can also mute threads or domains that aren&apos;t useful to keep alerts relevant.",
   },
 ];
 
@@ -109,8 +109,7 @@ export function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="self-stretch text-center text-muted-foreground text-sm font-medium leading-[18.20px] break-words">
-            Everything you need to know about Pointer and how it can transform
-            your development workflow
+            Answers to common questions about monitoring conversations with CommunityTracker
           </p>
         </div>
       </div>

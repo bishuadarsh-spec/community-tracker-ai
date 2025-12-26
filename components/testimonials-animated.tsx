@@ -13,37 +13,37 @@ export function TestimonialsAnimated() {
   const testimonials = [
     {
       quote:
-        "As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.",
+        "We finally see Reddit, Discord, and X mentions before they blow up. The AI summaries save me hours every week.",
       author: "Leah Daniel",
-      role: "Design Ops Lead, Teamwork",
+      role: "Community Manager",
       initials: "LD",
     },
     {
       quote:
-        "We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro.",
-      author: "Jane Jay Jay",
-      role: "Project Manager, Google",
-      initials: "JJ",
+        "I get Slack alerts when our brand is mentioned on Hacker News or niche forums. No more digging through tabs.",
+      author: "Jaylen Moss",
+      role: "Growth Marketer",
+      initials: "JM",
     },
     {
       quote:
-        "Managing projects used to mean spreadsheets, DMs, and missed invoices. This platform keeps our workflows tight and our clients impressed.",
+        "The noise filters are great. I only get alerted when competitors or important keywords show up.",
       author: "Amos Chen",
-      role: "Art Director, Pentagram",
+      role: "Product Lead",
       initials: "AC",
     },
     {
       quote:
-        "From proposal to payment, this tool has transformed our entire process. Our clients love the smooth experience.",
+        "One dashboard for Reddit, GitHub, and Slack communities makes it easy to respond quickly and win trust.",
       author: "Sofia Martinez",
-      role: "Founder, Creative Minds",
+      role: "Agency Lead",
       initials: "SM",
     },
     {
       quote:
-        "This platform has revolutionized our workflow and helped us scale quickly.",
+        "Real-time alerts help us jump on support issues before they spread. It keeps our users happy.",
       author: "Liam O'Connor",
-      role: "CEO, Bright Ideas Agency",
+      role: "Customer Success Manager",
       initials: "LO",
     },
   ];
@@ -76,7 +76,7 @@ export function TestimonialsAnimated() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-          Community Tracker is by far the best agency tool I have ever used”
+          Trusted by teams who can&apos;t afford to miss a mention
         </h2>
         <div className="flex justify-center">
           <Avatar className="mr-3">
@@ -84,7 +84,7 @@ export function TestimonialsAnimated() {
           </Avatar>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          Martha Punla · VP Marketing, Meta
+          Martha Punla · Community Lead
         </p>
       </motion.div>
 

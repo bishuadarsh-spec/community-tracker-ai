@@ -13,10 +13,10 @@ export function PricingSectionDreelio() {
       name: "Starter",
       price: "29",
       features: [
-        "20 keywords",
-        "5 communities",
-        "Daily alerts",
-        "Dashboard access",
+        "20 keywords and phrases",
+        "Monitor Reddit, Hacker News, Product Hunt, Stack Overflow",
+        "Daily email alerts",
+        "AI summaries in dashboard",
       ],
       popular: false,
     },
@@ -24,11 +24,11 @@ export function PricingSectionDreelio() {
       name: "Pro",
       price: "99",
       features: [
-        "100 keywords",
-        "Unlimited communities",
-        "Real-time alerts",
-        "Slack integration",
-        "Auto-insights",
+        "100+ keywords and competitors",
+        "Reddit, Hacker News, Slack, Discord, X, GitHub, Product Hunt, forums",
+        "Real-time Slack and email alerts",
+        "Noise filters and sentiment cues",
+        "AI summaries and quick replies",
       ],
       popular: true,
     },
@@ -61,7 +61,7 @@ export function PricingSectionDreelio() {
             Simple Pricing
           </h2>
           <p className="text-lg text-gray-500 mt-2">
-            Choose the plan that fits your needs
+            Pick the coverage you need—upgrade anytime
           </p>
         </motion.div>
 

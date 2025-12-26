@@ -21,8 +21,7 @@ export function FooterSection() {
               </div>
 
               <p className="text-gray-700 leading-relaxed max-w-sm">
-                Your favourite business management software. Built for early
-                startup founders.
+                CommunityTracker keeps conversations from Reddit, Hacker News, Slack, Discord, and more in one place so you can respond faster.
               </p>
 
               {/* Social Icons */}

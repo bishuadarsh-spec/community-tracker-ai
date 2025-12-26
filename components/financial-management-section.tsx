@@ -41,10 +41,10 @@ export function FinancialManagementSection() {
   ];
 
   const features = [
-    { label: "Invoicing", icon: FileText },
-    { label: "Budgets", icon: Wallet },
-    { label: "Forecasting", icon: LineChart },
-    { label: "Integrations", icon: Link2 },
+    { label: "One dashboard view", icon: FileText },
+    { label: "Noise filters", icon: Wallet },
+    { label: "Slack & email alerts", icon: LineChart },
+    { label: "Competitor watch", icon: Link2 },
   ];
 
   return (
@@ -56,19 +56,13 @@ export function FinancialManagementSection() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-slate-500 font-semibold text-xs mb-6 uppercase tracking-widest">
-            Financial Management
+            What you get
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Stay on top of your revenue with real-time activity tracking
+            Every channel, filtered into clear next steps
           </h2>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-            Your latest activity shows steady engagement across your ongoing
-            leads. From SaaS marketing insights to community-driven tasks,
-            everything you’re working on updates instantly—giving you a clear
-            view of performance, progress, and earnings. With automated
-            tracking, expense logging, and smart financial tools, you always
-            know where your money is coming from and which tasks are performing
-            best.
+            See Reddit, Hacker News, Slack, Discord, X, GitHub, Product Hunt, Stack Overflow, and niche forums side by side. Noise is reduced automatically, AI summaries give instant context, and alerts route to Slack, email, or your dashboard so you never miss a lead, issue, or competitor move.
           </p>
 
           <a
@@ -81,7 +75,7 @@ export function FinancialManagementSection() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-colors mb-6"
             >
-              Try Community Tracker free
+              Start tracking for free
             </motion.button>
           </a>
 

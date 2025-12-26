@@ -8,44 +8,11 @@ export function ProjectManagementSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const projects = [
-    {
-      name: "Asana website audit",
-      priority: "High",
-      clients: ["client1", "client2"],
-      assigned: ["user1", "user2", "user3"],
-    },
-    {
-      name: "Marketing workshop",
-      priority: "Medium",
-      clients: ["client3"],
-      assigned: ["user1", "user2"],
-    },
-    {
-      name: "KYC verification app",
-      priority: "Low",
-      clients: ["client4"],
-      assigned: ["user3", "user4"],
-    },
-    {
-      name: "Summer sales strate...",
-      priority: "Medium",
-      clients: ["client5"],
-      assigned: ["user1", "user2", "user3"],
-    },
-    {
-      name: "Setup A/B testing for...",
-      priority: "High",
-      clients: ["client6"],
-      assigned: ["user2", "user4"],
-    },
-  ];
-
   const features = [
-    { label: "Tasks", icon: ListTodo },
-    { label: "Time tracking", icon: Timer },
-    { label: "Timesheets", icon: CalendarClock },
-    { label: "Reports", icon: BarChart },
+    { label: "Track keywords & names", icon: ListTodo },
+    { label: "Real-time alerts", icon: Timer },
+    { label: "Noise filters", icon: CalendarClock },
+    { label: "AI context", icon: BarChart },
   ];
 
   const getPriorityColor = (priority: string) => {
@@ -89,12 +56,10 @@ export function ProjectManagementSection() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-          Keep every project moving forward
+          The internet is talking about you. Don&apos;t hear it last.
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Plan, assign, and deliver your work - all in one place. With smart
-          task tracking, deadlines, and real-time progress, you stay organized
-          and clients stay confident.
+          Mentions live across Reddit threads, Discord channels, X posts, GitHub issues, and niche forums. CommunityTracker pulls them into one view, filters out noise, and alerts you before opportunities or problems slip by.
         </p>
       </motion.div>
 
@@ -206,19 +171,14 @@ export function ProjectManagementSection() {
           className="space-y-8"
         >
           <div>
-            <p className="text-gray-400 font-semibold text-sm mb-4 uppercase tracking-widest">
-              Project Management
+          <p className="text-gray-400 font-semibold text-sm mb-4 uppercase tracking-widest">
+              Pain point
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Reddit is driving the strongest community results
+              One dashboard for every mention
             </h2>
             <p className="text-lg text-muted-foreground mb-2">
-              Your community analytics show Reddit performing exceptionally
-              well. With a 77.5% AI Score, 20 total leads, and an efficiency
-              rating of 15.5, Reddit stands out as one of the most reliable
-              channels for generating high-quality engagement. Use these
-              insights to stay organized, improve performance, and maintain
-              client confidence.
+              Track brand keywords, competitors, and category topics across Reddit, Hacker News, Slack communities, Discord, X, GitHub, Product Hunt, Stack Overflow, and niche forums. Get quick summaries so you can jump in fast, find leads, spot issues, and respond before anyone else.
             </p>
           </div>
           <a
@@ -231,7 +191,7 @@ export function ProjectManagementSection() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-colors mt-2"
             >
-              Try Community Tracker free
+              Start tracking for free
             </motion.button>
           </a>
 

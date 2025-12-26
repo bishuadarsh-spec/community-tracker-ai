@@ -130,9 +130,7 @@ export function CTASection() {
             Ready to get started?
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of freelancers and agencies already managing their
-            business with Pointer. Start your free trial today—no credit card
-            required.
+            Keep every important mention in sight with one dashboard, real-time alerts, and AI summaries. Start free and see how fast you can respond.
           </p>
         </div>
 
@@ -150,15 +148,15 @@ export function CTASection() {
             rel="noopener noreferrer"
           >
             <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-6 text-lg rounded-full font-semibold shadow-lg hover:shadow-xl transition-all">
-              Try for Free
+              Start tracking for free
             </Button>
           </a>
-          <Link href="#features">
+          <Link href="https://calendly.com/adarsh-ilu/30min" target="_blank" rel="noopener noreferrer">
             <Button
               variant="outline"
               className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-white px-8 py-6 text-lg rounded-full font-semibold bg-transparent"
             >
-              See All Features
+              See live demo
             </Button>
           </Link>
         </motion.div>
