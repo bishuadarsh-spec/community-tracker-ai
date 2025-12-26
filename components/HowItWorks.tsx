@@ -1,336 +1,152 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import { Search, Users, Bell } from 'lucide-react';
+import { useMemo, useState } from "react";
+import { Bell, Search, Users } from "lucide-react";
 
-const ScrollAnimationComponent = () => {
-  const containerRef = useRef(null);
-  const leftImageContainerRef = useRef(null);
-  const image1Ref = useRef(null);
-  const image2Ref = useRef(null);
-  const image3Ref = useRef(null);
-  const rightTextContainerRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
+const steps = [
+  {
+    id: "01",
+    title: "Add keywords",
+    description: "Choose the topics, problems, and names you want to track.",
+    icon: Search,
+    image: "/new1.png",
+    accent: "from-blue-500/10 via-indigo-500/10 to-cyan-500/10",
+  },
+  {
+    id: "02",
+    title: "Pick communities",
+    description: "Select where you want to listen — Reddit, Slack, Discord, X, and more.",
+    icon: Users,
+    image: "/new2.png",
+    accent: "from-emerald-500/10 via-teal-500/10 to-sky-500/10",
+  },
+  {
+    id: "03",
+    title: "Get alerts",
+    description: "Receive only important posts in your dashboard, email, or Slack.",
+    icon: Bell,
+    image: "/new3.png",
+    accent: "from-amber-500/10 via-orange-500/10 to-pink-500/10",
+  },
+];
 
-  useEffect(() => {
-    // Check if mobile on mount and on resize
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // lg breakpoint
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    // Load GSAP only on desktop
-    if (!isMobile) {
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
-      script.async = true;
-      
-      script.onload = () => {
-        const gsapScrollScript = document.createElement('script');
-        gsapScrollScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js';
-        
-        gsapScrollScript.onload = () => {
-          const gsap = window.gsap;
-          gsap.registerPlugin(window.ScrollTrigger);
+const HowItWorks = () => {
+  const [activeStep, setActiveStep] = useState(0);
 
-          // Pin the left side (images stay fixed)
-          gsap.to(leftImageContainerRef.current, {
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: 'top top',
-              end: 'bottom bottom',
-              pin: leftImageContainerRef.current,
-              pinSpacing: false,
-            }
-          });
-
-          // Image 1: visible at start, fades out
-          gsap.fromTo(image1Ref.current,
-            { opacity: 1, display: 'flex' },
-            {
-              opacity: 0,
-              display: 'none',
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: 'top top',
-                end: '33% top',
-                scrub: 1,
-              }
-            }
-          );
-
-          // Image 2: fades in then fades out
-          gsap.fromTo(image2Ref.current,
-            { opacity: 0, display: 'none' },
-            {
-              opacity: 1,
-              display: 'flex',
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: '15% top',
-                end: '33% top',
-                scrub: 1,
-              }
-            }
-          );
-
-          gsap.to(image2Ref.current, {
-            opacity: 0,
-            display: 'none',
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: '33% top',
-              end: '50% top',
-              scrub: 1,
-            }
-          });
-
-          // Image 3: fades in at the end
-          gsap.fromTo(image3Ref.current,
-            { opacity: 0, display: 'none' },
-            {
-              opacity: 1,
-              display: 'flex',
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: '40% top',
-                end: '66% top',
-                scrub: 1,
-              }
-            }
-          );
-        };
-        
-        document.head.appendChild(gsapScrollScript);
-      };
-      
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      if (window.ScrollTrigger) {
-        window.ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      }
-      window.removeEventListener('resize', checkMobile);
-    };
-  }, [isMobile]);
+  const active = useMemo(() => steps[activeStep], [activeStep]);
 
   return (
-    <div className="bg-white pt-10 md:pt-16">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-4 px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+    <section className="bg-white py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="text-center mb-10 md:mb-14">
+          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-3">
+            Walkthrough
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             How it works
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Add keywords, pick communities, and get focused alerts.
+          <p className="mt-3 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            Move from setup to signal in three quick steps.
           </p>
-        </div>
-      </div>
-      
-      <div ref={containerRef} className="relative bg-white">
-        {/* Mobile Layout - Stacked */}
-        <div className="lg:hidden">
-          {/* Section 1 - Mobile */}
-          <div className="min-h-[80vh] flex flex-col items-center justify-center p-6">
-            <div className="w-full max-w-md mb-4">
-              <div className="bg-white rounded-3xl flex items-center justify-center h-[300px] md:h-[400px] mb-8">
-                <img 
-                  src="/new1.png" 
-                  alt="leads" 
-                  className="w-full h-full rounded-2xl object-contain" 
+        </header>
+
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-14 items-start">
+          {/* Visual */}
+          <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-white via-white to-slate-50 shadow-xl">
+            <div className={`absolute inset-0 blur-3xl opacity-70 bg-gradient-to-br ${active.accent}`} />
+
+            <div className="relative p-6 sm:p-10 flex flex-col gap-6">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex items-center rounded-full bg-black text-white text-xs px-3 py-1 font-semibold shadow-lg">
+                  Step {active.id}
+                </span>
+                <span className="text-sm text-muted-foreground">{active.title}</span>
+              </div>
+
+              <div className="overflow-hidden rounded-2xl bg-white/70 border border-border/70 shadow-lg">
+                <img
+                  src={active.image}
+                  alt={active.title}
+                  className="w-full h-[320px] md:h-[420px] object-contain bg-gradient-to-b from-white to-slate-50"
                 />
               </div>
-              
-              <div className="text-center md:text-left">
-                <div className="relative inline-block mb-4">
-                  <div className="bg-gray-200 rounded-2xl p-4 w-16 h-16 flex items-center justify-center">
-                    <Search className="w-8 h-8 text-gray-700" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shadow-lg">
-                    01
-                  </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                  Add keywords
-                </h2>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Choose the topics, problems, and names you want to track.
-                </p>
+
+              <div className="grid grid-cols-3 gap-3 text-sm text-muted-foreground">
+                {steps.map((step, index) => (
+                  <button
+                    key={step.id}
+                    onClick={() => setActiveStep(index)}
+                    className={`rounded-2xl border px-3 py-2 text-left transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/30 ${
+                      activeStep === index
+                        ? "border-black text-foreground bg-white shadow-sm"
+                        : "border-border hover:border-foreground/40"
+                    }`}
+                    aria-pressed={activeStep === index}
+                  >
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Step {step.id}</p>
+                    <p className="font-semibold leading-tight">{step.title}</p>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Section 2 - Mobile */}
-          <div className="min-h-[80vh] flex flex-col items-center justify-center p-6">
-            <div className="w-full max-w-md mb-4">
-              <div className="bg-white rounded-3xl  flex items-center justify-center h-[300px] md:h-[400px] mb-8">
-                <img 
-                  src="/new2.png" 
-                  alt="Connect Communities" 
-                  className="w-full h-full rounded-2xl object-contain" 
-                />
-              </div>
-              
-              <div className="text-center md:text-left">
-                <div className="relative inline-block mb-4">
-                  <div className="bg-gray-200 rounded-2xl p-4 w-16 h-16 flex items-center justify-center">
-                    <Users className="w-8 h-8 text-gray-700" />
+          {/* Steps */}
+          <div className="space-y-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              const isActive = index === activeStep;
+
+              return (
+                <button
+                  key={step.id}
+                  onMouseEnter={() => setActiveStep(index)}
+                  onFocus={() => setActiveStep(index)}
+                  onClick={() => setActiveStep(index)}
+                  className={`w-full text-left group rounded-3xl border bg-white transition-all duration-200 px-5 py-6 sm:px-6 sm:py-7 flex items-start gap-4 ${
+                    isActive
+                      ? "border-foreground/70 shadow-lg shadow-black/5"
+                      : "border-border hover:border-foreground/40 hover:-translate-y-[2px]"
+                  }`}
+                >
+                  <div
+                    className={`mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-foreground transition-colors ${
+                      isActive
+                        ? "border-foreground bg-foreground text-white"
+                        : "border-border bg-slate-50"
+                    }`}
+                  >
+                    <Icon className="w-5 h-5" />
                   </div>
-                  <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shadow-lg">
-                    02
-                  </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                  Pick communities
-                </h2>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Select where you want to listen — Reddit, Slack, Discord, X, and more.
-                </p>
-              </div>
-            </div>
-          </div>
 
-          {/* Section 3 - Mobile */}
-          <div className="min-h-[80vh] flex flex-col items-center justify-center p-6">
-            <div className="w-full max-w-md mb-4">
-              <div className="bg-white rounded-3xl  flex items-center justify-center h-[300px] md:h-[400px] mb-8">
-                <img 
-                  src="/new3.png" 
-                  alt="Get Real-Time Alerts" 
-                  className="w-full h-full rounded-2xl object-contain" 
-                />
-              </div>
-              
-              <div className="text-center md:text-left">
-                <div className="relative inline-block mb-4">
-                  <div className="bg-gray-200 rounded-2xl p-4 w-16 h-16 flex items-center justify-center">
-                    <Bell className="w-8 h-8 text-gray-700" />
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`inline-flex h-9 w-9 items-center justify-center rounded-full border text-sm font-semibold transition-colors ${
+                          isActive
+                            ? "border-foreground bg-foreground text-white"
+                            : "border-border bg-white text-foreground"
+                        }`}
+                        aria-hidden
+                      >
+                        {step.id}
+                      </span>
+                      <h3 className="text-xl md:text-2xl font-semibold text-foreground">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
-                  <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shadow-lg">
-                    03
-                  </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                  Get alerts
-                </h2>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Receive only important posts in your dashboard, email, or Slack.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Desktop Layout - Side by Side */}
-        <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-          <div 
-            ref={leftImageContainerRef}
-            className="relative h-screen flex items-center justify-center p-8"
-          >
-            <div className="relative w-full max-w-2xl h-[600px]">
-              {/* Image 1 */}
-              <div
-                ref={image1Ref}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <div className="w-[95%] h-full bg-white rounded-3xl flex items-center justify-center">
-                  <img src="/new1.png" alt="leads" className="w-[95%] h-full rounded-3xl object-contain" />
-                </div>
-              </div>
-
-              {/* Image 2 */}
-              <div
-                ref={image2Ref}
-                className="absolute inset-0 hidden items-center justify-center"
-                style={{ opacity: 0 }}
-              >
-                <div className="w-[95%] h-full rounded-3xl flex items-center justify-center">
-                  <img src="/new2.png" alt="Connect Communities" className="w-[95%] h-full rounded-3xl object-contain" />
-                </div>
-              </div>
-
-              {/* Image 3 */}
-              <div
-                ref={image3Ref}
-                className="absolute inset-0 hidden items-center justify-center"
-                style={{ opacity: 0 }}
-              >
-                <div className="w-full h-full rounded-3xl flex items-center justify-center">
-                  <img src="/new3.png" alt="Get Real-Time Alerts" className="w-[95%] h-full rounded-3xl object-contain" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Scrolling Text (Desktop) */}
-          <div ref={rightTextContainerRef} className="bg-white hidden lg:block">
-            {/* Text Section 1 */}
-            <div className="min-h-screen flex items-center justify-center p-6">
-              <div className="max-w-xl">
-                <div className="relative inline-block mb-4">
-                  <div className="bg-gray-200 rounded-2xl p-5 w-20 h-20 flex items-center justify-center">
-                    <Search className="w-10 h-10 text-gray-700" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-base font-bold shadow-lg">
-                    01
-                  </span>
-                </div>
-                <h2 className="text-4xl font-bold mb-6 text-gray-900 leading-tight">
-                  Add keywords
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Choose the topics, problems, and names you want to track.
-                </p>
-              </div>
-            </div>
-
-            {/* Text Section 2 */}
-            <div className="min-h-screen flex items-center justify-center p-6">
-              <div className="max-w-xl">
-                <div className="relative inline-block mb-4">
-                  <div className="bg-gray-200 rounded-2xl p-5 w-20 h-20 flex items-center justify-center">
-                    <Users className="w-10 h-10 text-gray-700" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-base font-bold shadow-lg">
-                    02
-                  </span>
-                </div>
-                <h2 className="text-4xl font-bold mb-6 text-gray-900 leading-tight">
-                  Pick communities
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Select where you want to listen — Reddit, Slack, Discord, X, and more.
-                </p>
-              </div>
-            </div>
-
-            {/* Text Section 3 */}
-            <div className="min-h-screen flex items-center justify-center p-6">
-              <div className="max-w-xl">
-                <div className="relative inline-block mb-4">
-                  <div className="bg-gray-200 rounded-2xl p-5 w-20 h-20 flex items-center justify-center">
-                    <Bell className="w-10 h-10 text-gray-700" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-base font-bold shadow-lg">
-                    03
-                  </span>
-                </div>
-                <h2 className="text-4xl font-bold mb-6 text-gray-900 leading-tight">
-                  Get alerts
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Receive only important posts in your dashboard, email, or Slack.
-                </p>
-              </div>
-            </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default ScrollAnimationComponent;
+export default HowItWorks;
