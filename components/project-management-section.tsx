@@ -42,10 +42,10 @@ export function ProjectManagementSection() {
   ];
 
   const features = [
-    { label: "Tasks", icon: ListTodo },
-    { label: "Time tracking", icon: Timer },
-    { label: "Timesheets", icon: CalendarClock },
-    { label: "Reports", icon: BarChart },
+    { label: "Channel insights", icon: ListTodo },
+    { label: "Conversation quality signals", icon: Timer },
+    { label: "Thread tracking", icon: CalendarClock },
+    { label: "Saved views for different goals", icon: BarChart },
   ];
 
   const getPriorityColor = (priority: string) => {
@@ -89,12 +89,10 @@ export function ProjectManagementSection() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-          Keep every project moving forward
+          Your dashboard shows what matters — not everything
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Plan, assign, and deliver your work - all in one place. With smart
-          task tracking, deadlines, and real-time progress, you stay organized
-          and clients stay confident.
+          See which communities are producing the most useful conversations, spot buying intent and urgent issues, follow threads as they grow, and save views for different goals like leads, competitors, support issues, content ideas, or partnerships.
         </p>
       </motion.div>
 
@@ -207,18 +205,13 @@ export function ProjectManagementSection() {
         >
           <div>
             <p className="text-gray-400 font-semibold text-sm mb-4 uppercase tracking-widest">
-              Project Management
+              Product preview
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Reddit is driving the strongest community results
+              Your dashboard shows what matters — not everything
             </h2>
             <p className="text-lg text-muted-foreground mb-2">
-              Your community analytics show Reddit performing exceptionally
-              well. With a 77.5% AI Score, 20 total leads, and an efficiency
-              rating of 15.5, Reddit stands out as one of the most reliable
-              channels for generating high-quality engagement. Use these
-              insights to stay organized, improve performance, and maintain
-              client confidence.
+              See which communities are producing the most useful conversations, spot posts with buying intent, pain points, comparisons, and urgent issues, and follow discussions as they grow so you can jump in at the right time.
             </p>
           </div>
           <a
@@ -231,7 +224,7 @@ export function ProjectManagementSection() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-colors mt-2"
             >
-              Try Community Tracker free
+              Try CommunityTracker free
             </motion.button>
           </a>
 

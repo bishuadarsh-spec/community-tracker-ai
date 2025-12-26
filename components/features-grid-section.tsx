@@ -95,9 +95,9 @@ const featureBottomItems = [
         className="text-center mb-8 md:mb-12 lg:mb-16"
       >
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight px-4">
-          Powerful Features
+          Powerful features that keep you ahead
         </h2>
-        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">Everything you need to stay on top of online conversations</p>
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">Keyword + competitor tracking across multiple platforms • Smart filters (include/exclude keywords, language filters, source filters) • Instant alerts (Slack, email, dashboard) • Quick summaries so you understand threads fast • Tagging + notes for your team (Lead, Support, Partner, Competitor, etc.) • Team inbox to assign and follow up on conversations • Exports (CSV and basic integrations) • History + search so nothing gets lost. Built for anyone who relies on online communities: Marketers & growth teams • Founders & operators • Agencies • Community managers • Product teams • Support teams.</p>
       </motion.div>
 
       {/* Top Two Feature Cards */}

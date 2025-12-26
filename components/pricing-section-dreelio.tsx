@@ -17,6 +17,7 @@ export function PricingSectionDreelio() {
         "5 communities",
         "Daily alerts",
         "Dashboard access",
+        "Basic filters",
       ],
       popular: false,
     },
@@ -28,7 +29,8 @@ export function PricingSectionDreelio() {
         "Unlimited communities",
         "Real-time alerts",
         "Slack integration",
-        "Auto-insights",
+        "Summaries + insights",
+        "Team features",
       ],
       popular: true,
     },
@@ -58,10 +60,10 @@ export function PricingSectionDreelio() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Simple Pricing
+            Simple pricing that scales with your tracking
           </h2>
           <p className="text-lg text-gray-500 mt-2">
-            Choose the plan that fits your needs
+            Cancel anytime.
           </p>
         </motion.div>
 
@@ -84,7 +86,7 @@ export function PricingSectionDreelio() {
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white px-4 py-1 rounded-full text-sm font-semibold">
-                  Popular
+                  Most popular
                 </div>
               )}
 
@@ -115,7 +117,7 @@ export function PricingSectionDreelio() {
                     : "border-gray-500 bg-gray-200 hover:bg-gray-300"
                 }`}
               >
-                Get Started
+                {plan.name === "Starter" ? "Get started" : "Start free"}
               </button>
             </motion.div>
           ))}
