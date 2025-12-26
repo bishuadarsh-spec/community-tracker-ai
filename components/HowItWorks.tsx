@@ -122,10 +122,10 @@ const ScrollAnimationComponent = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-4 px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-            How It Works
+            How it works
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Three simple steps to track every important conversation
+            Choose keywords, pick communities, and get alerts.
           </p>
         </div>
       </div>
@@ -154,10 +154,10 @@ const ScrollAnimationComponent = () => {
                   </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                  Add Keywords
+                  Add keywords
                 </h2>
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Tell the system exactly what topics, competitors, or product mentions you want to track. Our smart matching filters out noise automatically.
+                  Choose the topics, problems, and names you want to track.
                 </p>
               </div>
             </div>
@@ -184,10 +184,10 @@ const ScrollAnimationComponent = () => {
                   </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                  Connect Communities
+                  Pick communities
                 </h2>
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Choose from Reddit, Hacker News, Slack groups, Discord, Twitter/X, and dozens more platforms. One dashboard for all your sources.
+                  Select where you want to listen — Reddit, Slack, Discord, X, and more.
                 </p>
               </div>
             </div>
@@ -214,10 +214,10 @@ const ScrollAnimationComponent = () => {
                   </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                  Get Real-Time Alerts
+                  Get alerts
                 </h2>
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Receive instant insights, AI-powered summaries, and important discussions delivered to Slack, email, or your dashboard.
+                  Receive only important posts in your dashboard, email, or Slack.
                 </p>
               </div>
             </div>
@@ -279,10 +279,10 @@ const ScrollAnimationComponent = () => {
                   </span>
                 </div>
                 <h2 className="text-4xl font-bold mb-6 text-gray-900 leading-tight">
-                  Add Keywords
+                  Add keywords
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Tell the system exactly what topics, competitors, or product mentions you want to track. Our smart matching filters out noise automatically.
+                  Choose the topics, problems, and names you want to track.
                 </p>
               </div>
             </div>
@@ -299,10 +299,10 @@ const ScrollAnimationComponent = () => {
                   </span>
                 </div>
                 <h2 className="text-4xl font-bold mb-6 text-gray-900 leading-tight">
-                  Connect Communities
+                  Pick communities
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Choose from Reddit, Hacker News, Slack groups, Discord, Twitter/X, and dozens more platforms. One dashboard for all your sources.
+                  Select where you want to listen — Reddit, Slack, Discord, X, and more.
                 </p>
               </div>
             </div>
@@ -319,10 +319,10 @@ const ScrollAnimationComponent = () => {
                   </span>
                 </div>
                 <h2 className="text-4xl font-bold mb-6 text-gray-900 leading-tight">
-                  Get Real-Time Alerts
+                  Get alerts
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Receive instant insights, AI-powered summaries, and important discussions delivered to Slack, email, or your dashboard.
+                  Receive only important posts in your dashboard, email, or Slack.
                 </p>
               </div>
             </div>

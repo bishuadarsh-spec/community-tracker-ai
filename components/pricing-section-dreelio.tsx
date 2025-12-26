@@ -16,7 +16,6 @@ export function PricingSectionDreelio() {
         "20 keywords",
         "5 communities",
         "Daily alerts",
-        "Dashboard access",
       ],
       popular: false,
     },
@@ -28,7 +27,7 @@ export function PricingSectionDreelio() {
         "Unlimited communities",
         "Real-time alerts",
         "Slack integration",
-        "Auto-insights",
+        "Team access",
       ],
       popular: true,
     },
@@ -58,10 +57,10 @@ export function PricingSectionDreelio() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Simple Pricing
+            Simple pricing
           </h2>
           <p className="text-lg text-gray-500 mt-2">
-            Choose the plan that fits your needs
+            Cancel anytime.
           </p>
         </motion.div>
 
@@ -115,7 +114,7 @@ export function PricingSectionDreelio() {
                     : "border-gray-500 bg-gray-200 hover:bg-gray-300"
                 }`}
               >
-                Get Started
+                {plan.popular ? "Start free" : "Get started"}
               </button>
             </motion.div>
           ))}

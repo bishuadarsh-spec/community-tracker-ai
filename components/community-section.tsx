@@ -10,20 +10,52 @@ export function CommunitySection() {
 
   const communities = [
     {
-      platform: "X/Twitter",
-      followers: "15.2K followers",
-      description: "Stay updated on new features and discover how others are using Community Tracker.",
-      buttonText: "Follow us",
+      platform: "Marketers",
+      followers: "Find demand and trends",
+      description: "Spot buying signals and conversations that reveal real intent.",
+      buttonText: "Get started",
       bgColor: "from-blue-50 to-blue-100",
-      link: "https://x.com",
+      link: "#",
     },
     {
-      platform: "YouTube",
-      followers: "32k subscribers",
-      description: "Tips, tutorials, and in-depth feature guides to inspire and enhance your Community Tracker workflow.",
-      buttonText: "Subscribe",
+      platform: "Founders",
+      followers: "Monitor brand mentions",
+      description: "See what people say about your product across communities.",
+      buttonText: "Get started",
       bgColor: "from-red-50 to-red-100",
-      link: "https://youtube.com",
+      link: "#",
+    },
+    {
+      platform: "Agencies",
+      followers: "Track multiple clients",
+      description: "Keep every client’s keywords and competitors covered in one place.",
+      buttonText: "Get started",
+      bgColor: "from-blue-50 to-blue-100",
+      link: "#",
+    },
+    {
+      platform: "Community managers",
+      followers: "Stay present",
+      description: "Jump into conversations while threads are still active.",
+      buttonText: "Get started",
+      bgColor: "from-red-50 to-red-100",
+      link: "#",
+    },
+    {
+      platform: "Product teams",
+      followers: "Collect feedback",
+      description: "See feature requests and pain points as soon as they appear.",
+      buttonText: "Get started",
+      bgColor: "from-blue-50 to-blue-100",
+      link: "#",
+    },
+    {
+      platform: "Support teams",
+      followers: "Catch issues early",
+      description: "Find problems before they turn into public complaints.",
+      buttonText: "Get started",
+      bgColor: "from-red-50 to-red-100",
+      link: "#",
     },
   ]
 
@@ -54,7 +86,7 @@ export function CommunitySection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Stay in the loop</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Who it’s for</h2>
       </motion.div>
 
       <motion.div

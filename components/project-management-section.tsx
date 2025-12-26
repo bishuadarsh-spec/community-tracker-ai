@@ -89,12 +89,10 @@ export function ProjectManagementSection() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-          Keep every project moving forward
+          Too many platforms. Too easy to miss things.
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Plan, assign, and deliver your work - all in one place. With smart
-          task tracking, deadlines, and real-time progress, you stay organized
-          and clients stay confident.
+          Important conversations are spread everywhere. By the time you find them, it’s often too late. CommunityTracker monitors communities for you, so you can focus on responding — not searching.
         </p>
       </motion.div>
 
