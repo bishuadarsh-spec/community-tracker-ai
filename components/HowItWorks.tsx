@@ -37,8 +37,8 @@ const HowItWorks = () => {
 
   return (
     <section className="bg-white py-12 md:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10 md:mb-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="text-center mb-10 md:mb-12">
           <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-3">
             Walkthrough
           </p>
@@ -50,49 +50,49 @@ const HowItWorks = () => {
           </p>
         </header>
 
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-14 items-start">
-          {/* Visual */}
-          <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-white via-white to-slate-50 shadow-xl">
+        <div className="space-y-10">
+          <div className="relative max-w-4xl mx-auto overflow-hidden rounded-[28px] border border-border/70 bg-gradient-to-br from-white via-white to-slate-50 shadow-2xl">
             <div className={`absolute inset-0 blur-3xl opacity-70 bg-gradient-to-br ${active.accent}`} />
 
-            <div className="relative p-6 sm:p-10 flex flex-col gap-6">
-              <div className="flex items-center gap-3">
+            <div className="relative p-4 sm:p-8 flex flex-col gap-5 items-center">
+              <div className="flex items-center gap-3 bg-white/80 border border-border/60 rounded-full px-4 py-2 shadow-sm">
                 <span className="inline-flex items-center rounded-full bg-black text-white text-xs px-3 py-1 font-semibold shadow-lg">
                   Step {active.id}
                 </span>
-                <span className="text-sm text-muted-foreground">{active.title}</span>
+                <span className="text-sm text-muted-foreground font-medium">{active.title}</span>
               </div>
 
-              <div className="overflow-hidden rounded-2xl bg-white/70 border border-border/70 shadow-lg">
+              <div className="overflow-hidden rounded-2xl bg-white border border-border/70 shadow-lg w-full">
                 <img
                   src={active.image}
                   alt={active.title}
-                  className="w-full h-[320px] md:h-[420px] object-contain bg-gradient-to-b from-white to-slate-50"
+                  className="w-full h-[300px] sm:h-[360px] md:h-[420px] object-contain bg-gradient-to-b from-white to-slate-50"
                 />
               </div>
 
-              <div className="grid grid-cols-3 gap-3 text-sm text-muted-foreground">
+              <div className="flex flex-wrap justify-center gap-3">
                 {steps.map((step, index) => (
                   <button
                     key={step.id}
                     onClick={() => setActiveStep(index)}
-                    className={`rounded-2xl border px-3 py-2 text-left transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/30 ${
+                    className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold tracking-wide transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/30 ${
                       activeStep === index
-                        ? "border-black text-foreground bg-white shadow-sm"
-                        : "border-border hover:border-foreground/40"
+                        ? "border-black bg-black text-white shadow-md"
+                        : "border-border bg-white text-muted-foreground hover:border-foreground/40"
                     }`}
                     aria-pressed={activeStep === index}
                   >
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Step {step.id}</p>
-                    <p className="font-semibold leading-tight">{step.title}</p>
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-current">
+                      {step.id}
+                    </span>
+                    {step.title}
                   </button>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Steps */}
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isActive = index === activeStep;
@@ -103,42 +103,33 @@ const HowItWorks = () => {
                   onMouseEnter={() => setActiveStep(index)}
                   onFocus={() => setActiveStep(index)}
                   onClick={() => setActiveStep(index)}
-                  className={`w-full text-left group rounded-3xl border bg-white transition-all duration-200 px-5 py-6 sm:px-6 sm:py-7 flex items-start gap-4 ${
+                  className={`text-left group rounded-3xl border bg-white transition-all duration-200 px-5 py-6 flex flex-col gap-3 h-full ${
                     isActive
                       ? "border-foreground/70 shadow-lg shadow-black/5"
                       : "border-border hover:border-foreground/40 hover:-translate-y-[2px]"
                   }`}
                 >
-                  <div
-                    className={`mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-foreground transition-colors ${
-                      isActive
-                        ? "border-foreground bg-foreground text-white"
-                        : "border-border bg-slate-50"
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <span
-                        className={`inline-flex h-9 w-9 items-center justify-center rounded-full border text-sm font-semibold transition-colors ${
-                          isActive
-                            ? "border-foreground bg-foreground text-white"
-                            : "border-border bg-white text-foreground"
-                        }`}
-                        aria-hidden
-                      >
-                        {step.id}
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`inline-flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold transition-colors ${
+                        isActive
+                          ? "border-foreground bg-foreground text-white"
+                          : "border-border bg-slate-50 text-foreground"
+                      }`}
+                      aria-hidden
+                    >
+                      {step.id}
+                    </span>
+                    <div className="flex items-center gap-2 text-foreground">
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-50 border border-border/80">
+                        <Icon className="w-5 h-5" />
                       </span>
-                      <h3 className="text-xl md:text-2xl font-semibold text-foreground">
-                        {step.title}
-                      </h3>
+                      <h3 className="text-lg md:text-xl font-semibold">{step.title}</h3>
                     </div>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
                   </div>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
                 </button>
               );
             })}
