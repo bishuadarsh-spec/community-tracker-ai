@@ -10,20 +10,20 @@ export function CommunitySection() {
 
   const communities = [
     {
-      platform: "X/Twitter",
-      followers: "15.2K followers",
-      description: "Stay updated on new features and discover how others are using Community Tracker.",
-      buttonText: "Follow us",
+      platform: "If you’re trying to keep up with what people are saying, you already know the pain:",
+      followers: "Someone asks for a recommendation… but you see it two days later",
+      description: "A competitor gets mentioned in a thread you should’ve joined",
+      buttonText: "A complaint starts spreading and you find out when it’s already bigger",
       bgColor: "from-blue-50 to-blue-100",
-      link: "https://x.com",
+      link: "https://communitytracker.ai",
     },
     {
-      platform: "YouTube",
-      followers: "32k subscribers",
-      description: "Tips, tutorials, and in-depth feature guides to inspire and enhance your Community Tracker workflow.",
-      buttonText: "Subscribe",
+      platform: "You spend 45 minutes scrolling… and still miss the one post that mattered",
+      followers: "CommunityTracker keeps watch for you",
+      description: "so you don’t have to live inside 10 tabs.",
+      buttonText: "The problem isn’t “no conversations.” It’s “too many places.”",
       bgColor: "from-red-50 to-red-100",
-      link: "https://youtube.com",
+      link: "https://communitytracker.ai",
     },
   ]
 
@@ -54,7 +54,7 @@ export function CommunitySection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Stay in the loop</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">The problem isn’t “no conversations.” It’s “too many places.”</h2>
       </motion.div>
 
       <motion.div

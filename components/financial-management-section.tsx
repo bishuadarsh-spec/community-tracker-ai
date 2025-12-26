@@ -41,10 +41,10 @@ export function FinancialManagementSection() {
   ];
 
   const features = [
-    { label: "Invoicing", icon: FileText },
-    { label: "Budgets", icon: Wallet },
-    { label: "Forecasting", icon: LineChart },
-    { label: "Integrations", icon: Link2 },
+    { label: "Catches high-intent posts early", icon: FileText },
+    { label: "Filters noise automatically", icon: Wallet },
+    { label: "Gives you context, not just links", icon: LineChart },
+    { label: "Helps you respond faster", icon: Link2 },
   ];
 
   return (
@@ -56,19 +56,13 @@ export function FinancialManagementSection() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-slate-500 font-semibold text-xs mb-6 uppercase tracking-widest">
-            Financial Management
+            What you get
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Stay on top of your revenue with real-time activity tracking
+            What CommunityTracker does for you (every day)
           </h2>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-            Your latest activity shows steady engagement across your ongoing
-            leads. From SaaS marketing insights to community-driven tasks,
-            everything you’re working on updates instantly—giving you a clear
-            view of performance, progress, and earnings. With automated
-            tracking, expense logging, and smart financial tools, you always
-            know where your money is coming from and which tasks are performing
-            best.
+            Catches high-intent posts early, filters noise automatically so you don’t waste time on irrelevant threads, gives you context not just links, helps you respond faster, and keeps competitor mentions visible without obsessively checking their brand name.
           </p>
 
           <a
@@ -81,7 +75,7 @@ export function FinancialManagementSection() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-colors mb-6"
             >
-              Try Community Tracker free
+              Try CommunityTracker free
             </motion.button>
           </a>
 

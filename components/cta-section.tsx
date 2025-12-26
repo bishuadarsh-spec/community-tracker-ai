@@ -127,12 +127,10 @@ export function CTASection() {
       >
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-            Ready to get started?
+            Be in the right conversations — before they’re over.
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of freelancers and agencies already managing their
-            business with Pointer. Start your free trial today—no credit card
-            required.
+            Start tracking today and get your first meaningful alerts in minutes.
           </p>
         </div>
 
@@ -150,7 +148,7 @@ export function CTASection() {
             rel="noopener noreferrer"
           >
             <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-6 text-lg rounded-full font-semibold shadow-lg hover:shadow-xl transition-all">
-              Try for Free
+              Start tracking for free
             </Button>
           </a>
           <Link href="#features">
@@ -158,7 +156,7 @@ export function CTASection() {
               variant="outline"
               className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-white px-8 py-6 text-lg rounded-full font-semibold bg-transparent"
             >
-              See All Features
+              See live demo
             </Button>
           </Link>
         </motion.div>

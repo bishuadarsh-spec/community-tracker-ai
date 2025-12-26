@@ -21,8 +21,7 @@ export function FooterSection() {
               </div>
 
               <p className="text-gray-700 leading-relaxed max-w-sm">
-                Your favourite business management software. Built for early
-                startup founders.
+                Monitor the conversations that shape what people buy, recommend, and trust.
               </p>
 
               {/* Social Icons */}
@@ -38,23 +37,22 @@ export function FooterSection() {
 
             {/* CENTER: Pages */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground">PAGES</h3>
+              <h3 className="text-lg font-semibold text-foreground">Pages</h3>
               <ul className="space-y-3 text-gray-700">
                 <li><a href="#" className="hover:text-black">Home</a></li>
-                <li><a href="#" className="hover:text-black">Features</a></li>
+                <li><a href="#" className="hover:text-black">Product</a></li>
                 <li><a href="#" className="hover:text-black">Pricing</a></li>
                 <li><a href="#" className="hover:text-black">Blog</a></li>
+                <li><a href="#" className="hover:text-black">Contact</a></li>
               </ul>
             </div>
 
             {/* RIGHT: Information */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground">INFORMATION</h3>
+              <h3 className="text-lg font-semibold text-foreground">Legal</h3>
               <ul className="space-y-3 text-gray-700">
-                <li><a href="#" className="hover:text-black">Contact</a></li>
                 <li><a href="#" className="hover:text-black">Privacy</a></li>
-                <li><a href="#" className="hover:text-black">Terms of use</a></li>
-                <li><a href="#" className="hover:text-black">404</a></li>
+                <li><a href="#" className="hover:text-black">Terms</a></li>
               </ul>
             </div>
           </div>
@@ -65,7 +63,7 @@ export function FooterSection() {
           {/* Bottom Row */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-700 text-sm">
-              © 2025 Community Tracker. 
+              © 2025 CommunityTracker
             </p>
 
           
