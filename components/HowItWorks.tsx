@@ -6,26 +6,29 @@ import { Bell, Search, Users } from "lucide-react";
 const steps = [
   {
     id: "01",
-    title: "Add keywords",
-    description: "Choose the topics, problems, and names you want to track.",
-    icon: Search,
-    image: "/new1.png",
-    accent: "from-blue-500/10 via-indigo-500/10 to-cyan-500/10",
-  },
-  {
-    id: "02",
-    title: "Pick communities",
-    description: "Select where you want to listen — Reddit, Slack, Discord, X, and more.",
+    title: "Select communities",
+    description: "Pick the forums, chats, and social platforms you want to monitor.",
     icon: Users,
-    image: "/new2.png",
+    image:
+      "https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/Screenshot%202026-01-01%20at%203.48.31%E2%80%AFPM.png",
     accent: "from-emerald-500/10 via-teal-500/10 to-sky-500/10",
   },
   {
+    id: "02",
+    title: "Select keywords",
+    description: "Add the product names, competitors, and topics you care about.",
+    icon: Search,
+    image:
+      "https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/Screenshot%202026-01-01%20at%203.59.38%E2%80%AFPM.png",
+    accent: "from-blue-500/10 via-indigo-500/10 to-cyan-500/10",
+  },
+  {
     id: "03",
-    title: "Get alerts",
-    description: "Receive only important posts in your dashboard, email, or Slack.",
+    title: "Active mentions",
+    description: "Track live conversations and surface the most important mentions automatically.",
     icon: Bell,
-    image: "/new3.png",
+    image:
+      "https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/Screenshot%202026-01-01%20at%203.48.59%E2%80%AFPM.png",
     accent: "from-amber-500/10 via-orange-500/10 to-pink-500/10",
   },
 ];
@@ -50,24 +53,32 @@ const HowItWorks = () => {
           </p>
         </header>
 
-        <div className="space-y-10">
-          <div className="relative max-w-4xl mx-auto overflow-hidden rounded-[28px] border border-border/70 bg-gradient-to-br from-white via-white to-slate-50 shadow-2xl">
-            <div className={`absolute inset-0 blur-3xl opacity-70 bg-gradient-to-br ${active.accent}`} />
+        <div className="space-y-12">
+          <div className="relative max-w-4xl mx-auto">
+            <div className={`absolute inset-0 blur-3xl opacity-80 bg-gradient-to-br ${active.accent}`} />
 
-            <div className="relative p-4 sm:p-8 flex flex-col gap-5 items-center">
-              <div className="flex items-center gap-3 bg-white/80 border border-border/60 rounded-full px-4 py-2 shadow-sm">
+            <div className="relative flex flex-col items-center gap-6">
+              <div className="flex items-center gap-3 bg-white/80 border border-border/60 rounded-full px-4 py-2 shadow-sm backdrop-blur">
                 <span className="inline-flex items-center rounded-full bg-black text-white text-xs px-3 py-1 font-semibold shadow-lg">
                   Step {active.id}
                 </span>
                 <span className="text-sm text-muted-foreground font-medium">{active.title}</span>
               </div>
 
-              <div className="overflow-hidden rounded-2xl bg-white border border-border/70 shadow-lg w-full">
-                <img
-                  src={active.image}
-                  alt={active.title}
-                  className="w-full h-[300px] sm:h-[360px] md:h-[420px] object-contain bg-gradient-to-b from-white to-slate-50"
-                />
+              <div className="relative w-full max-w-4xl mx-auto">
+                <div className="relative aspect-[16/9] flex items-center justify-center">
+                  {steps.map((step, index) => (
+                    <img
+                      key={step.id}
+                      src={step.image}
+                      alt={step.title}
+                      className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
+                        activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                      }`}
+                      style={{ filter: "drop-shadow(0 24px 60px rgba(0,0,0,0.08))" }}
+                    />
+                  ))}
+                </div>
               </div>
 
               <div className="flex flex-wrap justify-center gap-3">

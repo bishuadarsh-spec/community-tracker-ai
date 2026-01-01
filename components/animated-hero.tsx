@@ -161,7 +161,7 @@ export function AnimatedHero() {
           className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
         >
           <img
-            src="/tyty.png" 
+            src="https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/dashboard.png"
             alt="Dashboard"
             className="w-full h-full "
           />
