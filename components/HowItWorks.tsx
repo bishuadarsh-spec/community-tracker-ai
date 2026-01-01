@@ -120,50 +120,44 @@ const HowItWorks = () => {
 
             <div className="relative flex items-center justify-center">
               <div
-                className="absolute inset-2 md:inset-4 rounded-[32px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 opacity-90 blur-xl"
+                className="absolute inset-1 md:inset-3 rounded-[32px] bg-gradient-to-br from-white via-slate-100 to-slate-200 opacity-80 blur-3xl"
                 aria-hidden
               />
 
-              <div className="relative w-full max-w-3xl rounded-[28px] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-950 to-black text-white shadow-[0_30px_120px_rgba(0,0,0,0.25)] backdrop-blur">
-                <div className="absolute -inset-px rounded-[28px] bg-gradient-to-br from-white/10 via-white/5 to-transparent opacity-50" aria-hidden />
+              <div className="relative w-full max-w-3xl overflow-hidden rounded-[28px] border border-white/70 bg-white shadow-[0_30px_120px_rgba(15,23,42,0.16)]">
+                <div className="absolute inset-px rounded-[28px] bg-gradient-to-br from-white via-white to-transparent opacity-70" aria-hidden />
 
                 <div className="relative p-4 sm:p-6 space-y-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-2 text-sm text-white/70">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white/5 border border-white/10 font-semibold">
+                  <div className="flex items-center justify-between gap-3 text-foreground">
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 border border-border text-sm font-semibold text-foreground">
                         {active.id}
                       </span>
                       <div className="space-y-0.5">
-                        <p className="text-xs uppercase tracking-[0.2em] text-white/50">Active step</p>
-                        <p className="text-base font-semibold text-white">{active.title}</p>
+                        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Active step</p>
+                        <p className="text-base font-semibold text-foreground">{active.title}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-white/70 text-xs">
-                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/5 border border-white/10" aria-hidden>
-                        •
-                      </span>
-                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/5 border border-white/10" aria-hidden>
-                        •
-                      </span>
-                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/5 border border-white/10" aria-hidden>
-                        •
-                      </span>
-                    </div>
+                    <span className="rounded-full bg-slate-100 text-xs font-medium text-muted-foreground px-3 py-1 border border-border/60">
+                      Live preview
+                    </span>
                   </div>
 
-                  <div className="relative overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-br from-slate-800/60 via-slate-900/80 to-black/80 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-                    <div className={`absolute inset-0 opacity-80 blur-3xl bg-gradient-to-br ${active.accent}`} aria-hidden />
+                  <div className="relative rounded-[24px] bg-slate-950/5 border border-border/70 shadow-inner overflow-hidden">
+                    <div
+                      className={`absolute inset-6 rounded-[24px] bg-gradient-to-br from-white/80 via-white to-white shadow-[0_24px_80px_rgba(0,0,0,0.06)] ${active.accent}`}
+                      aria-hidden
+                    />
 
-                    <div className="relative aspect-[16/10] sm:aspect-[16/9]">
+                    <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[22px] overflow-hidden">
                       {steps.map((step, index) => (
                         <img
                           key={step.id}
                           src={step.image}
                           alt={step.title}
-                          className={`absolute inset-0 h-full w-full object-contain p-4 sm:p-6 transition-all duration-500 ease-in-out ${
-                            activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                          className={`absolute inset-0 h-full w-full object-contain p-6 sm:p-8 transition-all duration-500 ease-in-out ${
+                            activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
                           }`}
-                          style={{ filter: "drop-shadow(0 24px 60px rgba(0,0,0,0.22))" }}
                         />
                       ))}
                     </div>
