@@ -119,28 +119,23 @@ const HowItWorks = () => {
             </div>
 
             <div className="relative flex items-center justify-center">
-              <div className="absolute inset-6 rounded-[24px] bg-gradient-to-br from-white/80 via-white to-white shadow-[0_24px_80px_rgba(0,0,0,0.06)]" aria-hidden />
-              <div className="relative w-full">
-                <div className="aspect-[4/3] rounded-[20px] overflow-hidden border border-border bg-white shadow-lg">
+              <div
+                className="absolute inset-6 rounded-[24px] bg-gradient-to-br from-white/80 via-white to-white shadow-[0_24px_80px_rgba(0,0,0,0.06)]"
+                aria-hidden
+              />
+              <div className="relative w-full max-w-3xl rounded-[24px]">
+                <div className="relative aspect-[4/3] rounded-[20px] overflow-hidden border border-border bg-white shadow-lg">
                   {steps.map((step, index) => (
                     <img
                       key={step.id}
                       src={step.image}
                       alt={step.title}
-                      className={`w-full h-full object-contain transition-all duration-500 ease-in-out ${
+                      className={`absolute inset-0 h-full w-full object-contain transition-all duration-500 ease-in-out ${
                         activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                       }`}
                       style={{ filter: "drop-shadow(0 24px 60px rgba(0,0,0,0.08))" }}
                     />
                   ))}
-                </div>
-                <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-black text-white px-3 py-1 font-semibold shadow-md">
-                    {active.title}
-                  </span>
-                  <span className="rounded-full border border-border/80 bg-white/80 px-3 py-1 font-medium backdrop-blur">
-                    {active.description}
-                  </span>
                 </div>
               </div>
             </div>
