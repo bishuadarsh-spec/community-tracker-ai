@@ -42,9 +42,6 @@ const HowItWorks = () => {
     <section className="bg-white py-12 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-10 md:mb-12">
-          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-3">
-            Walkthrough
-          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             How it works
           </h2>
@@ -148,7 +145,7 @@ const HowItWorks = () => {
                     </div>
                   </div>
 
-                  <div className="flex w-full flex-col items-center gap-3">
+                  <div className="w-full text-center space-y-3">
                     <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 border border-border/60 text-xs font-semibold text-muted-foreground">
                       <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-white border border-border text-foreground text-sm font-semibold">
                         {active.id}
