@@ -116,46 +116,30 @@ const HowItWorks = () => {
             </div>
 
             <div className="relative flex items-center justify-center">
-              <div
-                className="absolute inset-1 md:inset-3 rounded-[32px] bg-gradient-to-br from-white via-slate-100 to-slate-200 opacity-80 blur-3xl"
-                aria-hidden
-              />
-
-              <div className="relative w-full max-w-3xl overflow-hidden rounded-[28px] border border-white/70 bg-white shadow-[0_30px_120px_rgba(15,23,42,0.16)]">
-                <div className="absolute inset-px rounded-[28px] bg-gradient-to-br from-white via-white to-transparent opacity-70" aria-hidden />
-
-                <div className="relative p-4 sm:p-6 space-y-5 flex flex-col items-center text-center">
-                  <div className="relative w-full max-w-2xl rounded-[24px] bg-slate-950/5 border border-border/70 shadow-inner overflow-hidden">
-                    <div
-                      className={`absolute inset-6 rounded-[24px] bg-gradient-to-br from-white/80 via-white to-white shadow-[0_24px_80px_rgba(0,0,0,0.06)] ${active.accent}`}
-                      aria-hidden
+              <div className="relative w-full max-w-3xl space-y-6 text-center">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center overflow-hidden">
+                  {steps.map((step, index) => (
+                    <img
+                      key={step.id}
+                      src={step.image}
+                      alt={step.title}
+                      className={`absolute inset-0 h-full w-full object-contain transition-all duration-500 ease-in-out ${
+                        activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                      }`}
                     />
+                  ))}
+                </div>
 
-                    <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[22px] overflow-hidden">
-                      {steps.map((step, index) => (
-                        <img
-                          key={step.id}
-                          src={step.image}
-                          alt={step.title}
-                          className={`absolute inset-0 h-full w-full object-contain p-6 sm:p-8 transition-all duration-500 ease-in-out ${
-                            activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                          }`}
-                        />
-                      ))}
-                    </div>
+                <div className="space-y-3">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 border border-border/60 text-xs font-semibold text-muted-foreground">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-white border border-border text-foreground text-sm font-semibold">
+                      {active.id}
+                    </span>
+                    Active step
                   </div>
-
-                  <div className="w-full text-center space-y-3">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 border border-border/60 text-xs font-semibold text-muted-foreground">
-                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-white border border-border text-foreground text-sm font-semibold">
-                        {active.id}
-                      </span>
-                      Active step
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-lg font-semibold text-foreground">{active.title}</p>
-                      <p className="text-sm md:text-base text-muted-foreground max-w-2xl">{active.description}</p>
-                    </div>
+                  <div className="space-y-1">
+                    <p className="text-lg font-semibold text-foreground">{active.title}</p>
+                    <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">{active.description}</p>
                   </div>
                 </div>
               </div>
