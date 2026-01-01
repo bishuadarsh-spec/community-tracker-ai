@@ -158,7 +158,7 @@ export function AnimatedHero() {
       <div className="mt-20 max-w-sm md:max-w-3xl mx-auto relative h-60 md:h-[350px]">
         <div
           ref={imageWrapperRef}
-          className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
+          className="absolute inset-0 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
         >
           <img
             src="https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/dashboard.png"

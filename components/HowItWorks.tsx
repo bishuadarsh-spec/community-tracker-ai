@@ -42,108 +42,124 @@ const HowItWorks = () => {
     <section className="bg-white py-12 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-10 md:mb-12">
-          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-semibold mb-3">
-            Walkthrough
-          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             How it works
           </h2>
           <p className="mt-3 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Move from setup to signal in three quick steps.
+            Move from setup to signal in three quick steps without repeating yourself.
           </p>
         </header>
 
-        <div className="space-y-12">
-          <div className="relative max-w-4xl mx-auto">
-            <div className={`absolute inset-0 blur-3xl opacity-80 bg-gradient-to-br ${active.accent}`} />
+        <div className="relative overflow-hidden rounded-[32px] border border-border/70 bg-gradient-to-br from-slate-50 via-white to-white shadow-xl">
+          <div className={`absolute inset-0 opacity-60 blur-3xl bg-gradient-to-br ${active.accent}`} aria-hidden />
 
-            <div className="relative flex flex-col items-center gap-6">
-              <div className="flex items-center gap-3 bg-white/80 border border-border/60 rounded-full px-4 py-2 shadow-sm backdrop-blur">
-                <span className="inline-flex items-center rounded-full bg-black text-white text-xs px-3 py-1 font-semibold shadow-lg">
-                  Step {active.id}
+          <div className="relative grid lg:grid-cols-[1.05fr_1fr] gap-8 md:gap-12 p-6 md:p-10">
+            <div className="flex flex-col gap-4 md:gap-6">
+              <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-black text-white shadow-lg">
+                  {active.id}
                 </span>
-                <span className="text-sm text-muted-foreground font-medium">{active.title}</span>
+                <span className="rounded-full border border-border/80 bg-white/80 px-3 py-1 text-xs font-medium shadow-sm backdrop-blur">
+                  {active.title}
+                </span>
               </div>
 
-              <div className="relative w-full max-w-4xl mx-auto">
-                <div className="relative aspect-[16/9] flex items-center justify-center">
-                  {steps.map((step, index) => (
-                    <img
+              <h3 className="text-2xl md:text-3xl font-semibold text-foreground leading-tight">
+                See exactly what happens in each step
+              </h3>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                Hover or click any step to preview the experience. The content updates in place so you never have to piece together duplicate cards and screenshots.
+              </p>
+
+              <div className="space-y-3">
+                {steps.map((step, index) => {
+                  const Icon = step.icon;
+                  const isActive = index === activeStep;
+
+                  return (
+                    <button
                       key={step.id}
-                      src={step.image}
-                      alt={step.title}
-                      className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
-                        activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                      onMouseEnter={() => setActiveStep(index)}
+                      onFocus={() => setActiveStep(index)}
+                      onClick={() => setActiveStep(index)}
+                      className={`w-full text-left rounded-2xl border transition-all duration-200 px-4 py-4 flex gap-3 items-start ${
+                        isActive
+                          ? "bg-white border-foreground/70 shadow-md shadow-black/5"
+                          : "bg-white/70 border-border hover:border-foreground/40 hover:-translate-y-[1px]"
                       }`}
-                      style={{ filter: "drop-shadow(0 24px 60px rgba(0,0,0,0.08))" }}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-3">
-                {steps.map((step, index) => (
-                  <button
-                    key={step.id}
-                    onClick={() => setActiveStep(index)}
-                    className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold tracking-wide transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/30 ${
-                      activeStep === index
-                        ? "border-black bg-black text-white shadow-md"
-                        : "border-border bg-white text-muted-foreground hover:border-foreground/40"
-                    }`}
-                    aria-pressed={activeStep === index}
-                  >
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-current">
-                      {step.id}
-                    </span>
-                    {step.title}
-                  </button>
-                ))}
+                    >
+                      <span
+                        className={`mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl border text-sm font-semibold ${
+                          isActive
+                            ? "bg-foreground text-white border-foreground"
+                            : "bg-slate-50 text-foreground border-border"
+                        }`}
+                        aria-hidden
+                      >
+                        {step.id}
+                      </span>
+                      <div className="flex-1 space-y-1">
+                        <div className="flex items-center gap-2 text-foreground">
+                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-50 border border-border/70">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          <p className="text-base md:text-lg font-semibold">{step.title}</p>
+                        </div>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              const isActive = index === activeStep;
+            <div className="relative flex items-center justify-center">
+              <div
+                className="absolute inset-1 md:inset-3 rounded-[32px] bg-gradient-to-br from-white via-slate-100 to-slate-200 opacity-80 blur-3xl"
+                aria-hidden
+              />
 
-              return (
-                <button
-                  key={step.id}
-                  onMouseEnter={() => setActiveStep(index)}
-                  onFocus={() => setActiveStep(index)}
-                  onClick={() => setActiveStep(index)}
-                  className={`text-left group rounded-3xl border bg-white transition-all duration-200 px-5 py-6 flex flex-col gap-3 h-full ${
-                    isActive
-                      ? "border-foreground/70 shadow-lg shadow-black/5"
-                      : "border-border hover:border-foreground/40 hover:-translate-y-[2px]"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <span
-                      className={`inline-flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold transition-colors ${
-                        isActive
-                          ? "border-foreground bg-foreground text-white"
-                          : "border-border bg-slate-50 text-foreground"
-                      }`}
+              <div className="relative w-full max-w-3xl overflow-hidden rounded-[28px] border border-white/70 bg-white shadow-[0_30px_120px_rgba(15,23,42,0.16)]">
+                <div className="absolute inset-px rounded-[28px] bg-gradient-to-br from-white via-white to-transparent opacity-70" aria-hidden />
+
+                <div className="relative p-4 sm:p-6 space-y-5 flex flex-col items-center text-center">
+                  <div className="relative w-full max-w-2xl rounded-[24px] bg-slate-950/5 border border-border/70 shadow-inner overflow-hidden">
+                    <div
+                      className={`absolute inset-6 rounded-[24px] bg-gradient-to-br from-white/80 via-white to-white shadow-[0_24px_80px_rgba(0,0,0,0.06)] ${active.accent}`}
                       aria-hidden
-                    >
-                      {step.id}
-                    </span>
-                    <div className="flex items-center gap-2 text-foreground">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-50 border border-border/80">
-                        <Icon className="w-5 h-5" />
-                      </span>
-                      <h3 className="text-lg md:text-xl font-semibold">{step.title}</h3>
+                    />
+
+                    <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[22px] overflow-hidden">
+                      {steps.map((step, index) => (
+                        <img
+                          key={step.id}
+                          src={step.image}
+                          alt={step.title}
+                          className={`absolute inset-0 h-full w-full object-contain p-6 sm:p-8 transition-all duration-500 ease-in-out ${
+                            activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                          }`}
+                        />
+                      ))}
                     </div>
                   </div>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </button>
-              );
-            })}
+
+                  <div className="w-full text-center space-y-3">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 border border-border/60 text-xs font-semibold text-muted-foreground">
+                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-white border border-border text-foreground text-sm font-semibold">
+                        {active.id}
+                      </span>
+                      Active step
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-lg font-semibold text-foreground">{active.title}</p>
+                      <p className="text-sm md:text-base text-muted-foreground max-w-2xl">{active.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
