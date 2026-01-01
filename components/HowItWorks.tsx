@@ -89,10 +89,10 @@ const HowItWorks = () => {
                       }`}
                     >
                       <span
-                        className={`mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl border text-sm font-semibold ${
+                        className={`inline-flex h-9 w-9 items-center justify-center rounded-xl border text-sm font-semibold transition-colors ${
                           isActive
                             ? "bg-foreground text-white border-foreground"
-                            : "bg-slate-50 text-foreground border-border"
+                            : "bg-white text-foreground border-border/70"
                         }`}
                         aria-hidden
                       >
@@ -116,14 +116,14 @@ const HowItWorks = () => {
             </div>
 
             <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-3xl text-center">
+              <div className="relative w-full max-w-3xl text-center group">
                 <div className="relative aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center overflow-hidden">
                   {steps.map((step, index) => (
                     <img
                       key={step.id}
                       src={step.image}
                       alt={step.title}
-                      className={`absolute inset-0 h-full w-full object-contain transition-all duration-500 ease-in-out ${
+                      className={`absolute inset-0 h-full w-full object-contain transition-all duration-500 ease-in-out group-hover:scale-105 ${
                         activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
                       }`}
                     />
