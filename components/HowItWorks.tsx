@@ -116,7 +116,7 @@ const HowItWorks = () => {
             </div>
 
             <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-3xl space-y-6 text-center">
+              <div className="relative w-full max-w-3xl text-center">
                 <div className="relative aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center overflow-hidden">
                   {steps.map((step, index) => (
                     <img
@@ -128,19 +128,6 @@ const HowItWorks = () => {
                       }`}
                     />
                   ))}
-                </div>
-
-                <div className="space-y-3">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 border border-border/60 text-xs font-semibold text-muted-foreground">
-                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-white border border-border text-foreground text-sm font-semibold">
-                      {active.id}
-                    </span>
-                    Active step
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-lg font-semibold text-foreground">{active.title}</p>
-                    <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">{active.description}</p>
-                  </div>
                 </div>
               </div>
             </div>
