@@ -6,26 +6,29 @@ import { Bell, Search, Users } from "lucide-react";
 const steps = [
   {
     id: "01",
-    title: "Add keywords",
-    description: "Choose the topics, problems, and names you want to track.",
-    icon: Search,
-    image: "/new1.png",
-    accent: "from-blue-500/10 via-indigo-500/10 to-cyan-500/10",
-  },
-  {
-    id: "02",
-    title: "Pick communities",
-    description: "Select where you want to listen — Reddit, Slack, Discord, X, and more.",
+    title: "Select communities",
+    description: "Pick the forums, chats, and social platforms you want to monitor.",
     icon: Users,
-    image: "/new2.png",
+    image:
+      "https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/Screenshot%202026-01-01%20at%203.48.31%E2%80%AFPM.png",
     accent: "from-emerald-500/10 via-teal-500/10 to-sky-500/10",
   },
   {
+    id: "02",
+    title: "Select keywords",
+    description: "Add the product names, competitors, and topics you care about.",
+    icon: Search,
+    image:
+      "https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/Screenshot%202026-01-01%20at%203.59.38%E2%80%AFPM.png",
+    accent: "from-blue-500/10 via-indigo-500/10 to-cyan-500/10",
+  },
+  {
     id: "03",
-    title: "Get alerts",
-    description: "Receive only important posts in your dashboard, email, or Slack.",
+    title: "Active mentions",
+    description: "Track live conversations and surface the most important mentions automatically.",
     icon: Bell,
-    image: "/new3.png",
+    image:
+      "https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/Screenshot%202026-01-01%20at%203.48.59%E2%80%AFPM.png",
     accent: "from-amber-500/10 via-orange-500/10 to-pink-500/10",
   },
 ];
