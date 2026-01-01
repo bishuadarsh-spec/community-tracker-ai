@@ -88,7 +88,7 @@ const HowItWorks = () => {
                           : "bg-white/70 border-border hover:border-foreground/40 hover:-translate-y-[1px]"
                       }`}
                     >
-                      <span className="text-sm font-semibold text-foreground" aria-hidden>
+                      <span aria-hidden>
                         {step.id}
                       </span>
                       <div className="flex-1 space-y-1">
