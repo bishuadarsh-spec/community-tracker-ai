@@ -148,7 +148,7 @@ const HowItWorks = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="flex w-full flex-col items-center gap-3">
                     <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 border border-border/60 text-xs font-semibold text-muted-foreground">
                       <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-white border border-border text-foreground text-sm font-semibold">
                         {active.id}
