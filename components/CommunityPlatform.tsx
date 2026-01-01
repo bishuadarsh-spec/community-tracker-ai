@@ -10,7 +10,7 @@ const Marquee = dynamic(() => import("react-fast-marquee"), {
 export default function CommunityPlatforms() {
   return (
       <div className="w-full py-5 lg:py-10 ">
-        <p className="mb-4 text-center text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        <p className="mb-8 text-center text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           Communities we support
         </p>
         <Marquee
