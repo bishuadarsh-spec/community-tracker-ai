@@ -53,24 +53,32 @@ const HowItWorks = () => {
           </p>
         </header>
 
-        <div className="space-y-10">
-          <div className="relative max-w-4xl mx-auto overflow-hidden rounded-[28px] border border-border/70 bg-gradient-to-br from-white via-white to-slate-50 shadow-2xl">
-            <div className={`absolute inset-0 blur-3xl opacity-70 bg-gradient-to-br ${active.accent}`} />
+        <div className="space-y-12">
+          <div className="relative max-w-4xl mx-auto">
+            <div className={`absolute inset-0 blur-3xl opacity-80 bg-gradient-to-br ${active.accent}`} />
 
-            <div className="relative p-4 sm:p-8 flex flex-col gap-5 items-center">
-              <div className="flex items-center gap-3 bg-white/80 border border-border/60 rounded-full px-4 py-2 shadow-sm">
+            <div className="relative flex flex-col items-center gap-6">
+              <div className="flex items-center gap-3 bg-white/80 border border-border/60 rounded-full px-4 py-2 shadow-sm backdrop-blur">
                 <span className="inline-flex items-center rounded-full bg-black text-white text-xs px-3 py-1 font-semibold shadow-lg">
                   Step {active.id}
                 </span>
                 <span className="text-sm text-muted-foreground font-medium">{active.title}</span>
               </div>
 
-              <div className="overflow-hidden rounded-2xl bg-white border border-border/70 shadow-lg w-full">
-                <img
-                  src={active.image}
-                  alt={active.title}
-                  className="w-full h-[300px] sm:h-[360px] md:h-[420px] object-contain bg-gradient-to-b from-white to-slate-50"
-                />
+              <div className="relative w-full max-w-4xl mx-auto">
+                <div className="relative aspect-[16/9] flex items-center justify-center">
+                  {steps.map((step, index) => (
+                    <img
+                      key={step.id}
+                      src={step.image}
+                      alt={step.title}
+                      className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
+                        activeStep === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                      }`}
+                      style={{ filter: "drop-shadow(0 24px 60px rgba(0,0,0,0.08))" }}
+                    />
+                  ))}
+                </div>
               </div>
 
               <div className="flex flex-wrap justify-center gap-3">
