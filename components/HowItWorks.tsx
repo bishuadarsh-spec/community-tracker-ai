@@ -127,23 +127,8 @@ const HowItWorks = () => {
               <div className="relative w-full max-w-3xl overflow-hidden rounded-[28px] border border-white/70 bg-white shadow-[0_30px_120px_rgba(15,23,42,0.16)]">
                 <div className="absolute inset-px rounded-[28px] bg-gradient-to-br from-white via-white to-transparent opacity-70" aria-hidden />
 
-                <div className="relative p-4 sm:p-6 space-y-4">
-                  <div className="flex items-center justify-between gap-3 text-foreground">
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 border border-border text-sm font-semibold text-foreground">
-                        {active.id}
-                      </span>
-                      <div className="space-y-0.5">
-                        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Active step</p>
-                        <p className="text-base font-semibold text-foreground">{active.title}</p>
-                      </div>
-                    </div>
-                    <span className="rounded-full bg-slate-100 text-xs font-medium text-muted-foreground px-3 py-1 border border-border/60">
-                      Live preview
-                    </span>
-                  </div>
-
-                  <div className="relative rounded-[24px] bg-slate-950/5 border border-border/70 shadow-inner overflow-hidden">
+                <div className="relative p-4 sm:p-6 space-y-5 flex flex-col items-center text-center">
+                  <div className="relative w-full max-w-2xl rounded-[24px] bg-slate-950/5 border border-border/70 shadow-inner overflow-hidden">
                     <div
                       className={`absolute inset-6 rounded-[24px] bg-gradient-to-br from-white/80 via-white to-white shadow-[0_24px_80px_rgba(0,0,0,0.06)] ${active.accent}`}
                       aria-hidden
@@ -160,6 +145,19 @@ const HowItWorks = () => {
                           }`}
                         />
                       ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 border border-border/60 text-xs font-semibold text-muted-foreground">
+                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-white border border-border text-foreground text-sm font-semibold">
+                        {active.id}
+                      </span>
+                      Active step
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-lg font-semibold text-foreground">{active.title}</p>
+                      <p className="text-sm md:text-base text-muted-foreground max-w-2xl">{active.description}</p>
                     </div>
                   </div>
                 </div>
