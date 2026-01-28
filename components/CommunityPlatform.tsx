@@ -66,6 +66,15 @@ const platforms = [
       </svg>
     ),
   },
+  {
+    name: "Indie Hackers",
+    description: "Founders & makers community",
+    svg: (
+      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M0 0h24v24H0V0zm4.8 4.8v14.4h3.6V12h3.6v7.2h3.6v-7.2h3.6v7.2h-3.6v-7.2H12v7.2H8.4V12H4.8v7.2h3.6V4.8H4.8zm3.6 0v3.6H12V4.8H8.4zm7.2 0v3.6h3.6V4.8h-3.6z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function CommunityPlatforms() {
@@ -104,7 +113,7 @@ export default function CommunityPlatforms() {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-8">
-          + Hacker News, Discord, Indie Hackers, niche forums, and more
+          + Hacker News, Discord, niche forums, and more
         </p>
       </div>
     </section>
