@@ -1,153 +1,45 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { Button } from "@/components/ui/button";
-import { Header } from "./header";
 import Link from "next/link";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function AnimatedHero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
-  const cloudLeftRef = useRef<HTMLImageElement>(null);
-  const cloudRightRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    const img = imageWrapperRef.current;
-    const cloudLeft = cloudLeftRef.current;
-    const cloudRight = cloudRightRef.current;
-
-    if (!hero || !img || !cloudLeft || !cloudRight) return;
-
-    /** 🔥 IMAGE PARALLAX + SCALE ANIMATION */
-    gsap.fromTo(
-      img,
-      { scale: 1, y: 0, z: 0, transformPerspective: 800 },
-      {
-        scale: 1.12,
-        y: -150,
-        z: 60,
-        ease: "none",
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom+=300 top",
-          scrub: 1.6,
-        },
-      }
-    );
-
-    /** ☁️ CLOUD PARALLAX — slow drifting movement */
-    gsap.to(cloudLeft, {
-      x: -60,
-      y: 20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.4,
-      },
-    });
-
-    gsap.to(cloudRight, {
-      x: 60,
-      y: 30,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.4,
-      },
-    });
-
-    /** Fade-in hero text */
-    gsap.from(".hero-title, .hero-desc, .hero-buttons", {
-      opacity: 0,
-      y: 40,
-      duration: 1.2,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
-  }, []);
-
   return (
-    <section
-      ref={heroRef}
-      className="relative  bg-gradient-to-b from-[#afd8f7] via-[#F5F8FB] to-[#EBD9CC] pt-20 px-4 overflow-hidden"
-    >
-      {/* HEADER */}
-      {/* <div className="absolute top-0 left-0 right-0 z-30">
-        <Header />
-      </div> */}
+    <section className="relative bg-white pt-28 pb-16 px-4 overflow-hidden">
+      <div className="max-w-5xl mx-auto text-center space-y-8">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
+          Never miss conversations{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">
+            that matter
+          </span>
+        </h1>
 
-      {/* ☁️ CLOUD LEFT */}
-      <img
-        ref={cloudLeftRef}
-        src="/images/cloud1.png" // ← replace path
-        alt="Cloud left"
-        className="absolute left-0 top-40 w-[260px] opacity-90 z-10 pointer-events-none"
-      />
-
-      {/* ☁️ CLOUD RIGHT */}
-      <img
-        ref={cloudRightRef}
-        src="/images/cloud2.png" // ← replace path
-        alt="Cloud right"
-        className="absolute right-0 top-52 w-[260px] opacity-90 z-10 pointer-events-none"
-      />
-
-     
-      <div className="max-w-5xl mx-auto relative z-20 text-center space-y-8 mt-8">
-        <div className="hero-title text-4xl md:text-7xl font-semibold leading-tight">
-          Never miss conversations that matter
-        </div>
-
-        <p className="hero-desc text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Track keywords, brand mentions, competitors, and category discussions across Reddit, Slack, Discord, X, GitHub, and more — all in one place.
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Track keywords, brand mentions, competitors, and category discussions
+          across Reddit, Slack, Discord, X, GitHub, and more — all in one place.
           <br />
-          Only relevant conversations. No noise.
+          <span className="font-medium text-foreground">Only relevant conversations. No noise.</span>
         </p>
 
-        <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center pt-6">
-      
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
           <a
             href="https://calendly.com/adarsh-ilu/30min"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button
-              className="
-        px-8 py-6 text-base font-bold rounded-full
-       bg-black
-        text-white shadow-md
-        transition-all duration-300 ease-out
-        hover:shadow-xl hover:bg-white hover:text-black hover:scale-[1.05] hover:border hover:border-black
-        active:scale-[0.98]
-      "
-            >
+            <Button className="px-8 py-6 text-base font-bold rounded-full bg-black text-white shadow-md hover:bg-gray-800 transition-colors">
               Start tracking for free
             </Button>
           </a>
 
-          {/* Outline Button */}
-          <Link href="https://calendly.com/adarsh-ilu/30min" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://calendly.com/adarsh-ilu/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="outline"
-              className="
-        px-8 py-6 text-base rounded-full
-        border-2 border-gray-300 text-gray-700
-        transition-all duration-300 ease-out
-        hover:border-[#090909] hover:text-[#121212]
-        hover:bg-[#5B7CFF]/10 hover:scale-[1.05]
-        active:scale-[0.98]
-      "
+              className="px-8 py-6 text-base rounded-full border-2 border-gray-300 text-gray-700 hover:border-black hover:text-black transition-colors"
             >
               See live demo
             </Button>
@@ -155,15 +47,12 @@ export function AnimatedHero() {
         </div>
       </div>
 
-      <div className="mt-20 max-w-sm md:max-w-3xl mx-auto relative h-60 md:h-[350px]">
-        <div
-          ref={imageWrapperRef}
-          className="absolute inset-0 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
-        >
+      <div className="mt-16 max-w-4xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
           <img
             src="https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/dashboard.png"
             alt="Dashboard"
-            className="w-full h-full "
+            className="w-full h-auto"
           />
         </div>
       </div>

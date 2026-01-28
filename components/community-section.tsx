@@ -1,93 +1,68 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
 
 export function CommunitySection() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   const communities = [
     {
       platform: "Who it's for",
       followers: "Marketers • Founders • Agencies",
-      description: "Marketers: find demand and trends • Founders: monitor brand mentions • Agencies: track multiple clients",
+      description:
+        "Marketers: find demand and trends • Founders: monitor brand mentions • Agencies: track multiple clients",
       buttonText: "Start tracking for free",
-      bgColor: "from-gray-50 to-gray-100",
-      link: "https://x.com",
+      link: "https://calendly.com/adarsh-ilu/30min",
     },
     {
       platform: "Built for teams",
       followers: "Community • Product • Support",
-      description: "Community managers: stay present • Product teams: collect feedback • Support teams: catch issues early",
+      description:
+        "Community managers: stay present • Product teams: collect feedback • Support teams: catch issues early",
       buttonText: "See live demo",
-      bgColor: "from-gray-50 to-gray-100",
-      link: "https://youtube.com",
+      link: "https://calendly.com/adarsh-ilu/30min",
     },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  }
+  ];
 
   return (
-    <section ref={ref} className="py-10 md:py-20 px-4 max-w-6xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Who it’s for</h2>
-      </motion.div>
+    <section className="py-20 md:py-28 px-4 max-w-6xl mx-auto bg-white">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+          Who it's{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">
+            for
+          </span>
+        </h2>
+      </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="grid md:grid-cols-2 gap-8"
-      >
+      <div className="grid md:grid-cols-2 gap-8">
         {communities.map((community, index) => (
-          <motion.div
+          <div
             key={index}
-            variants={itemVariants}
-            className={`bg-gradient-to-br ${community.bgColor} rounded-2xl p-8 border-2 border-gray-100 hover:border-gray-300 transition-all hover:shadow-lg group`}
-            whileHover={{ y: -5 }}
+            className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-gray-200 transition-colors"
           >
             <div className="mb-6">
-              <p className="text-sm font-semibold text-muted-foreground mb-2">{community.followers}</p>
-              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-muted-foreground transition-colors">
+              <p className="text-sm font-semibold text-muted-foreground mb-2">
+                {community.followers}
+              </p>
+              <h3 className="text-2xl font-bold text-foreground mb-3">
                 {community.platform}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">{community.description}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {community.description}
+              </p>
             </div>
 
-            <motion.button
-              className="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-3 transition-all"
-              whileHover={{ x: 5 }}
+            <a
+              href={community.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-foreground font-semibold hover:gap-3 transition-all"
             >
               {community.buttonText}
               <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </motion.div>
+            </a>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </section>
-  )
+  );
 }

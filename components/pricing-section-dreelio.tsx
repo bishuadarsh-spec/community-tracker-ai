@@ -1,22 +1,13 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { Check } from "lucide-react";
 
 export function PricingSectionDreelio() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const pricingPlans = [
     {
       name: "Starter",
       price: "29",
-      features: [
-        "20 keywords",
-        "5 communities",
-        "Daily alerts",
-      ],
+      features: ["20 keywords", "5 communities", "Daily alerts"],
       popular: false,
     },
     {
@@ -33,52 +24,27 @@ export function PricingSectionDreelio() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   return (
-    <section ref={ref} className="py-16 md:py-24 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Simple Pricing
+    <section className="py-20 md:py-28 px-4 bg-gray-50">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Simple{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">
+              Pricing
+            </span>
           </h2>
-          <p className="text-lg text-gray-500 mt-2">
-            Cancel anytime.
-          </p>
-        </motion.div>
+          <p className="text-lg text-muted-foreground">Cancel anytime.</p>
+        </div>
 
-        {/* Pricing Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 gap-10"
-        >
+        <div className="grid md:grid-cols-2 gap-8">
           {pricingPlans.map((plan, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={itemVariants}
-              className={`relative bg-gray-50 rounded-3xl p-10 border-2 transition-all ${
+              className={`relative bg-white rounded-2xl p-8 border-2 transition-colors ${
                 plan.popular
-                  ? "border-black shadow-xl"
-                  : "border-gray-200 hover:border-gray-300"
+                  ? "border-black"
+                  : "border-gray-100 hover:border-gray-200"
               }`}
             >
               {plan.popular && (
@@ -87,20 +53,23 @@ export function PricingSectionDreelio() {
                 </div>
               )}
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
                 {plan.name}
               </h3>
 
               <div className="flex items-end gap-1 mb-6">
-                <span className="text-5xl font-bold text-gray-900">
+                <span className="text-5xl font-bold text-foreground">
                   ${plan.price}
                 </span>
-                <span className="text-gray-500 text-lg">/month</span>
+                <span className="text-muted-foreground text-lg">/month</span>
               </div>
 
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3 text-gray-700">
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-muted-foreground"
+                  >
                     <Check className="w-5 h-5 text-foreground" />
                     {feature}
                   </li>
@@ -108,17 +77,17 @@ export function PricingSectionDreelio() {
               </ul>
 
               <button
-                className={`w-full py-4 rounded-full font-semibold transition-all ${
+                className={`w-full py-4 rounded-full font-semibold transition-colors ${
                   plan.popular
-                    ? "bg-black text-white hover:bg-gray-900"
-                    : "border-gray-500 bg-gray-200 hover:bg-gray-300"
+                    ? "bg-black text-white hover:bg-gray-800"
+                    : "bg-gray-100 text-foreground hover:bg-gray-200"
                 }`}
               >
                 {plan.name === "Starter" ? "Get started" : "Start free"}
               </button>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,73 +1,106 @@
 "use client";
 
 import { Linkedin, Twitter } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function FooterSection() {
   return (
-    <footer className="w-full bg-[#edf2ff] py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Footer Card */}
-        <div className="bg-[#b1d9f7]/30 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-lg border border-white/40">
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* LEFT: Logo + Text + Social Icons */}
-            <div className="space-y-6">
-              {/* Logo + Name */}
-              <div className="flex items-center gap-2">
-               <span className="text-foreground text-base sm:text-lg md:text-xl font-bold whitespace-nowrap">
-            <img src="/logos/nav_logo.png" alt="Community Tracker" className="h-6 md:h-10 inline-block" />
-          </span>
-              </div>
-
-              <p className="text-gray-700 leading-relaxed max-w-sm">
-                Track conversations before they pass you by.
-              </p>
-
-              {/* Social Icons */}
-              <div className="flex gap-4">
-                <button className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                  <Linkedin className="w-6 h-6" />
-                </button>
-                <button className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                  <Twitter className="w-6 h-6" />
-                </button>
-              </div>
-            </div>
-
-            {/* CENTER: Pages */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground">PAGES</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li><a href="#" className="hover:text-black">Home</a></li>
-                <li><a href="#" className="hover:text-black">Product</a></li>
-                <li><a href="#" className="hover:text-black">Pricing</a></li>
-                <li><a href="#" className="hover:text-black">Blog</a></li>
-                <li><a href="#" className="hover:text-black">Contact</a></li>
-              </ul>
-            </div>
-
-            {/* RIGHT: Information */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground">INFORMATION</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li><a href="#" className="hover:text-black">Privacy</a></li>
-                <li><a href="#" className="hover:text-black">Terms</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="my-10 border-t border-gray-300"></div>
-
-          {/* Bottom Row */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-700 text-sm">
-              © 2025 CommunityTracker
+    <footer className="w-full bg-gray-50 py-16 px-4 border-t border-gray-100">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-12">
+          <div className="md:col-span-2 space-y-6">
+            <img
+              src="/logos/nav_logo.png"
+              alt="Community Tracker"
+              className="h-8"
+            />
+            <p className="text-muted-foreground max-w-sm">
+              Track conversations before they pass you by.
             </p>
-
-          
+            <div className="flex gap-3">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+            </div>
           </div>
+
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              Pages
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#pricing"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              Legal
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <p className="text-muted-foreground text-sm">
+            © 2025 CommunityTracker. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

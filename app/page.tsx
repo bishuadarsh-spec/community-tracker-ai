@@ -1,48 +1,37 @@
 import { AnimatedHero } from "@/components/animated-hero";
-import { TrustedBySection } from "@/components/trusted-by-section";
-import { SeamlessDevicesSection } from "@/components/seamless-devices-section";
 import { ProjectManagementSection } from "@/components/project-management-section";
 import { FinancialManagementSection } from "@/components/financial-management-section";
 import { FeaturesGridSection } from "@/components/features-grid-section";
 import { TestimonialsAnimated } from "@/components/testimonials-animated";
 import { PricingSectionDreelio } from "@/components/pricing-section-dreelio";
-import { BlogSection } from "@/components/blog-section";
 import { CommunitySection } from "@/components/community-section";
 import { CTASection } from "@/components/cta-section";
 import { FooterSection } from "@/components/footer-section";
-import StackSlider from "@/components/StackSlider";
 import { Header } from "@/components/header";
-import HorizontalScrollSection from "@/components/horizontal-scroll-section";
 import { FAQSection } from "@/components/faq-section";
 import CommunityPlatforms from "@/components/CommunityPlatform";
 import ScrollAnimationComponent from "@/components/HowItWorks";
-
-
 
 export default function LandingPage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-background">
+      <main className="min-h-screen bg-white">
         <AnimatedHero />
-        {/* <TrustedBySection /> */}
-        {/* <StackSlider /> */}
         <CommunityPlatforms />
-        {/* <SeamlessDevicesSection /> */}
-
-        {/* <HorizontalScrollSection /> */}
         <ScrollAnimationComponent />
         <ProjectManagementSection />
         <FinancialManagementSection />
         <FeaturesGridSection />
         <TestimonialsAnimated />
-        <PricingSectionDreelio />
-        {/* <BlogSection /> */}
+        <section id="pricing">
+          <PricingSectionDreelio />
+        </section>
         <CommunitySection />
         <FAQSection />
         <CTASection />
         <FooterSection />
-      </div>
+      </main>
     </>
   );
 }
