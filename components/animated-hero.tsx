@@ -83,7 +83,7 @@ export function AnimatedHero() {
           <div className="relative">
             <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-3 md:p-4 shadow-2xl border border-gray-200">
               <img
-                src="/images/community-pulse.png"
+                src="https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/Screenshot%202026-01-28%20at%201.40.55%E2%80%AFPM.png"
                 alt="CommunityTracker — Community Pulse Dashboard"
                 className="w-full h-auto rounded-xl"
               />
