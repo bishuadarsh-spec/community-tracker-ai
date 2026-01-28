@@ -1,28 +1,8 @@
-import localFont from "next/font/local";
+import { Manrope } from "next/font/google";
 
-export const openRunde = localFont({
-  src: [
-    {
-      path: "../public/fonts/open-runde/OpenRunde-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/open-runde/OpenRunde-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/open-runde/OpenRunde-Semibold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/open-runde/OpenRunde-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-open-runde",
+export const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
   display: "swap",
 });

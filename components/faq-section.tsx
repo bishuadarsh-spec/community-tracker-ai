@@ -17,18 +17,15 @@ const faqData = [
   },
   {
     question: "Will I get too many alerts?",
-    answer:
-      "No. You control keywords, filters, and alert frequency.",
+    answer: "No. You control keywords, filters, and alert frequency.",
   },
   {
     question: "Can alerts go to Slack or email?",
-    answer:
-      "Yes.",
+    answer: "Yes.",
   },
   {
     question: "Can teams use it together?",
-    answer:
-      "Yes. Team features are included in Pro.",
+    answer: "Yes. Team features are included in Pro.",
   },
 ];
 
@@ -44,40 +41,27 @@ const FAQItem = ({ question, answer, isOpen, onToggle }: FAQItemProps) => {
     e.preventDefault();
     onToggle();
   };
+
   return (
     <div
-      className={`w-full bg-[rgba(231,236,235,0.08)] shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px] outline outline-1 outline-border outline-offset-[-1px] transition-all duration-500 ease-out cursor-pointer`}
+      className="w-full bg-gray-50 rounded-xl border border-gray-100 overflow-hidden cursor-pointer hover:border-gray-200 transition-colors"
       onClick={handleClick}
     >
-      <div className="w-full px-5 py-[18px] pr-4 flex justify-between items-center gap-5 text-left transition-all duration-300 ease-out">
-        <div className="flex-1 text-foreground text-base font-medium leading-6 break-words">
-          {question}
-        </div>
-        <div className="flex justify-center items-center">
-          <ChevronDown
-            className={`w-6 h-6 text-muted-foreground-dark transition-all duration-500 ease-out ${
-              isOpen ? "rotate-180 scale-110" : "rotate-0 scale-100"
-            }`}
-          />
-        </div>
+      <div className="w-full px-6 py-5 flex justify-between items-center gap-4">
+        <div className="flex-1 text-foreground font-medium">{question}</div>
+        <ChevronDown
+          className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </div>
       <div
-        className={`overflow-hidden transition-all duration-500 ease-out ${
-          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         }`}
-        style={{
-          transitionProperty: "max-height, opacity, padding",
-          transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
       >
-        <div
-          className={`px-5 transition-all duration-500 ease-out ${
-            isOpen ? "pb-[18px] pt-2 translate-y-0" : "pb-0 pt-0 -translate-y-2"
-          }`}
-        >
-          <div className="text-foreground/80 text-sm font-normal leading-6 break-words">
-            {answer}
-          </div>
+        <div className="px-6 pb-5">
+          <p className="text-muted-foreground">{answer}</p>
         </div>
       </div>
     </div>
@@ -86,6 +70,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }: FAQItemProps) => {
 
 export function FAQSection() {
   const [openItems, setOpenItems] = useState<Set<number>>(new Set());
+
   const toggleItem = (index: number) => {
     const newOpenItems = new Set(openItems);
     if (newOpenItems.has(index)) {
@@ -95,28 +80,31 @@ export function FAQSection() {
     }
     setOpenItems(newOpenItems);
   };
+
   return (
-    <section className="w-full pt-[66px] pb-20 md:pb-40 px-5 relative flex flex-col justify-center items-center">
-      <div className="w-[300px] h-[500px] absolute top-[150px] left-1/2 -translate-x-1/2 origin-top-left rotate-[-33.39deg] bg-primary/10 blur-[100px] z-0" />
-      <div className="self-stretch pt-8 pb-8 md:pt-14 md:pb-14 flex flex-col justify-center items-center gap-2 relative z-10">
-        <div className="flex flex-col justify-start items-center gap-4">
-          <h2 className="w-full  text-center text-foreground text-4xl md:text-5xl  font-semibold leading-10 break-words">
-            FAQs
+    <section className="py-20 md:py-28 px-4 bg-white">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">
+              FAQs
+            </span>
           </h2>
-          <p className="self-stretch text-center text-muted-foreground text-sm font-medium leading-[18.20px] break-words">
+          <p className="text-muted-foreground">
             Quick answers about CommunityTracker.
           </p>
         </div>
-      </div>
-      <div className="w-full max-w-[600px] pt-0.5 pb-10 flex flex-col justify-start items-start gap-4 relative z-10">
-        {faqData.map((faq, index) => (
-          <FAQItem
-            key={index}
-            {...faq}
-            isOpen={openItems.has(index)}
-            onToggle={() => toggleItem(index)}
-          />
-        ))}
+
+        <div className="space-y-4">
+          {faqData.map((faq, index) => (
+            <FAQItem
+              key={index}
+              {...faq}
+              isOpen={openItems.has(index)}
+              onToggle={() => toggleItem(index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

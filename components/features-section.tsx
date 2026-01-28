@@ -26,17 +26,17 @@ export function FeaturesSection() {
     {
       title: "Work from anywhere, stay in sync",
       description: "Seamless across devices - Mobile and Web",
-      gradient: "from-blue-100 to-blue-50",
+      gradient: "from-gray-100 to-gray-50",
     },
     {
       title: "Keep every project moving forward",
       description: "Plan, assign, and deliver all in one place",
-      gradient: "from-blue-50 to-purple-50",
+      gradient: "from-gray-50 to-gray-100",
     },
     {
       title: "Track income, get paid, stress less",
       description: "Create invoices, log expenses, automate payments",
-      gradient: "from-purple-50 to-pink-50",
+      gradient: "from-gray-100 to-gray-50",
     },
   ]
 
@@ -60,7 +60,7 @@ export function FeaturesSection() {
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="feature-card p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-blue-200 transition-all hover:shadow-xl"
+            className="feature-card p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-gray-300 transition-all hover:shadow-xl"
             whileHover={{ y: -5 }}
           >
             <div className={`w-full h-48 bg-gradient-to-br ${feature.gradient} rounded-xl mb-6`} />

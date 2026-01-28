@@ -20,8 +20,8 @@ const config = {
     },
 extend: {
   fontFamily: {
-    sans: ['var(--font-open-runde)', 'ui-sans-serif', 'system-ui'],
-    runde: ['var(--font-open-runde)'],
+    sans: ['Manrope', 'system-ui', 'sans-serif'],
+    manrope: ['Manrope', 'system-ui', 'sans-serif'],
   },
       colors: {
         border: "hsl(var(--border))",

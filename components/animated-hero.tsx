@@ -1,170 +1,109 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { Button } from "@/components/ui/button";
-import { Header } from "./header";
-import Link from "next/link";
-
-gsap.registerPlugin(ScrollTrigger);
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function AnimatedHero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
-  const cloudLeftRef = useRef<HTMLImageElement>(null);
-  const cloudRightRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    const img = imageWrapperRef.current;
-    const cloudLeft = cloudLeftRef.current;
-    const cloudRight = cloudRightRef.current;
-
-    if (!hero || !img || !cloudLeft || !cloudRight) return;
-
-    /** 🔥 IMAGE PARALLAX + SCALE ANIMATION */
-    gsap.fromTo(
-      img,
-      { scale: 1, y: 0, z: 0, transformPerspective: 800 },
-      {
-        scale: 1.12,
-        y: -150,
-        z: 60,
-        ease: "none",
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom+=300 top",
-          scrub: 1.6,
-        },
-      }
-    );
-
-    /** ☁️ CLOUD PARALLAX — slow drifting movement */
-    gsap.to(cloudLeft, {
-      x: -60,
-      y: 20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.4,
-      },
-    });
-
-    gsap.to(cloudRight, {
-      x: 60,
-      y: 30,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1.4,
-      },
-    });
-
-    /** Fade-in hero text */
-    gsap.from(".hero-title, .hero-desc, .hero-buttons", {
-      opacity: 0,
-      y: 40,
-      duration: 1.2,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
-  }, []);
+  const highlights = [
+    "Track Reddit, Discord, Slack & more",
+    "AI-powered noise filtering",
+    "Real-time alerts",
+  ];
 
   return (
-    <section
-      ref={heroRef}
-      className="relative  bg-gradient-to-b from-[#afd8f7] via-[#F5F8FB] to-[#EBD9CC] pt-20 px-4 overflow-hidden"
-    >
-      {/* HEADER */}
-      {/* <div className="absolute top-0 left-0 right-0 z-30">
-        <Header />
-      </div> */}
+    <section className="relative bg-white pt-24 pb-16 md:pt-32 md:pb-24 px-4 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left - Content */}
+          <div className="space-y-6">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 rounded-full text-sm">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-muted-foreground">
+                Now tracking 50+ communities
+              </span>
+            </div>
 
-      {/* ☁️ CLOUD LEFT */}
-      <img
-        ref={cloudLeftRef}
-        src="/images/cloud1.png" // ← replace path
-        alt="Cloud left"
-        className="absolute left-0 top-40 w-[260px] opacity-90 z-10 pointer-events-none"
-      />
+            {/* Heading */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
+              Never miss conversations{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">
+                that matter
+              </span>
+            </h1>
 
-      {/* ☁️ CLOUD RIGHT */}
-      <img
-        ref={cloudRightRef}
-        src="/images/cloud2.png" // ← replace path
-        alt="Cloud right"
-        className="absolute right-0 top-52 w-[260px] opacity-90 z-10 pointer-events-none"
-      />
+            {/* Description */}
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
+              Track keywords, brand mentions, and competitors across Reddit,
+              Slack, Discord, X, and more — all in one place.
+            </p>
 
-     
-      <div className="max-w-5xl mx-auto relative z-20 text-center space-y-8 mt-8">
-        <div className="hero-title text-4xl md:text-7xl font-semibold leading-tight">
-          Never miss conversations that matter
-        </div>
+            {/* Highlights */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {highlights.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
 
-        <p className="hero-desc text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Track keywords, brand mentions, competitors, and category discussions across Reddit, Slack, Discord, X, GitHub, and more — all in one place.
-          <br />
-          Only relevant conversations. No noise.
-        </p>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <a
+                href="https://calendly.com/adarsh-ilu/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="px-6 py-5 text-sm font-semibold rounded-full bg-black text-white hover:bg-gray-800 transition-colors">
+                  Start tracking for free
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </a>
 
-        <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center pt-6">
-      
-          <a
-            href="https://calendly.com/adarsh-ilu/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button
-              className="
-        px-8 py-6 text-base font-bold rounded-full
-       bg-black
-        text-white shadow-md
-        transition-all duration-300 ease-out
-        hover:shadow-xl hover:bg-white hover:text-black hover:scale-[1.05] hover:border hover:border-black
-        active:scale-[0.98]
-      "
-            >
-              Start tracking for free
-            </Button>
-          </a>
+              <a
+                href="https://calendly.com/adarsh-ilu/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="px-6 py-5 text-sm rounded-full border border-gray-200 text-foreground hover:bg-gray-50 transition-colors"
+                >
+                  See live demo
+                </Button>
+              </a>
+            </div>
+          </div>
 
-          {/* Outline Button */}
-          <Link href="https://calendly.com/adarsh-ilu/30min" target="_blank" rel="noopener noreferrer">
-            <Button
-              variant="outline"
-              className="
-        px-8 py-6 text-base rounded-full
-        border-2 border-gray-300 text-gray-700
-        transition-all duration-300 ease-out
-        hover:border-[#090909] hover:text-[#121212]
-        hover:bg-[#5B7CFF]/10 hover:scale-[1.05]
-        active:scale-[0.98]
-      "
-            >
-              See live demo
-            </Button>
-          </Link>
-        </div>
-      </div>
+          {/* Right - Image */}
+          <div className="relative">
+            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-3 md:p-4 shadow-2xl border border-gray-200">
+              <img
+                src="https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/dashboard.png"
+                alt="CommunityTracker Dashboard"
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
 
-      <div className="mt-20 max-w-sm md:max-w-3xl mx-auto relative h-60 md:h-[350px]">
-        <div
-          ref={imageWrapperRef}
-          className="absolute inset-0 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 mb-[-5rem]"
-        >
-          <img
-            src="https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/dashboard.png"
-            alt="Dashboard"
-            className="w-full h-full "
-          />
+            {/* Floating Stats Card */}
+            <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-white rounded-xl shadow-lg border border-gray-100 p-4 hidden sm:block">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-green-600 text-lg">↑</span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">
+                    12 new leads
+                  </p>
+                  <p className="text-xs text-muted-foreground">Today</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

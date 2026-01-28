@@ -96,13 +96,13 @@ export function BlogSection() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className={`group rounded-2xl overflow-hidden border-2 border-gray-100 hover:border-blue-200 transition-all hover:shadow-lg cursor-pointer ${
+            className={`group rounded-2xl overflow-hidden border-2 border-gray-100 hover:border-gray-300 transition-all hover:shadow-lg cursor-pointer ${
               post.featured ? "md:col-span-2 md:row-span-2" : ""
             }`}
             whileHover={{ y: -5 }}
           >
             <div
-              className={`bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden ${
+              className={`bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden ${
                 post.featured ? "h-96" : "h-48"
               }`}
             >
@@ -113,10 +113,10 @@ export function BlogSection() {
               />
             </div>
             <div className="p-6">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-2">
+              <p className="text-xs font-semibold text-foreground uppercase tracking-widest mb-2">
                 {post.category}
               </p>
-              <h3 className="text-lg font-bold text-foreground mb-4 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-bold text-foreground mb-4 group-hover:text-muted-foreground transition-colors">
                 {post.title}
               </h3>
               {post.excerpt && (
@@ -129,7 +129,7 @@ export function BlogSection() {
                   <p className="font-semibold text-foreground">{post.author}</p>
                   <p className="text-muted-foreground text-xs">{post.role}</p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-blue-600 transition-colors" />
+                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
               </div>
             </div>
           </motion.div>
