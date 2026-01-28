@@ -83,8 +83,8 @@ export function AnimatedHero() {
           <div className="relative">
             <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-3 md:p-4 shadow-2xl border border-gray-200">
               <img
-                src="https://slkkbt56njcjju1f.public.blob.vercel-storage.com/Community%20Tracker%20Assets/dashboard.png"
-                alt="CommunityTracker Dashboard"
+                src="/images/community-pulse.png"
+                alt="CommunityTracker — Community Pulse Dashboard"
                 className="w-full h-auto rounded-xl"
               />
             </div>
@@ -93,13 +93,13 @@ export function AnimatedHero() {
             <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-white rounded-xl shadow-lg border border-gray-100 p-4 hidden sm:block">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-green-600 text-lg">↑</span>
+                  <span className="text-green-600 text-lg font-bold">400</span>
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
-                    12 new leads
+                    Total mentions
                   </p>
-                  <p className="text-xs text-muted-foreground">Today</p>
+                  <p className="text-xs text-green-600 font-medium">+12.5%</p>
                 </div>
               </div>
             </div>
