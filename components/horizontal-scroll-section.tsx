@@ -160,7 +160,7 @@ export default function HorizontalScrollSection() {
               </div>
 
               <div className="px-2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-600 transition-colors duration-300">
                   {card.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">

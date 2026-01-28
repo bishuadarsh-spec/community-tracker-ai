@@ -10,11 +10,11 @@ export function CommunitySection() {
 
   const communities = [
     {
-      platform: "Who it’s for",
+      platform: "Who it's for",
       followers: "Marketers • Founders • Agencies",
       description: "Marketers: find demand and trends • Founders: monitor brand mentions • Agencies: track multiple clients",
       buttonText: "Start tracking for free",
-      bgColor: "from-blue-50 to-blue-100",
+      bgColor: "from-gray-50 to-gray-100",
       link: "https://x.com",
     },
     {
@@ -22,7 +22,7 @@ export function CommunitySection() {
       followers: "Community • Product • Support",
       description: "Community managers: stay present • Product teams: collect feedback • Support teams: catch issues early",
       buttonText: "See live demo",
-      bgColor: "from-red-50 to-red-100",
+      bgColor: "from-gray-50 to-gray-100",
       link: "https://youtube.com",
     },
   ]
@@ -67,12 +67,12 @@ export function CommunitySection() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className={`bg-gradient-to-br ${community.bgColor} rounded-2xl p-8 border-2 border-gray-100 hover:border-blue-200 transition-all hover:shadow-lg group`}
+            className={`bg-gradient-to-br ${community.bgColor} rounded-2xl p-8 border-2 border-gray-100 hover:border-gray-300 transition-all hover:shadow-lg group`}
             whileHover={{ y: -5 }}
           >
             <div className="mb-6">
               <p className="text-sm font-semibold text-muted-foreground mb-2">{community.followers}</p>
-              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-muted-foreground transition-colors">
                 {community.platform}
               </h3>
               <p className="text-muted-foreground leading-relaxed">{community.description}</p>

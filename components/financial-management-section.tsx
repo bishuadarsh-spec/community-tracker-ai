@@ -93,7 +93,7 @@ export function FinancialManagementSection() {
               <motion.div
                 key={index}
                 variants={featureVariants}
-                className="p-4 border-2 border-gray-100 rounded-xl hover:border-blue-200 transition-all cursor-pointer bg-white"
+                className="p-4 border-2 border-gray-100 rounded-xl hover:border-gray-300 transition-all cursor-pointer bg-white"
               >
                 <div className="flex items-center gap-2 text-2xl mb-2">
                   <feature.icon />
@@ -110,7 +110,7 @@ export function FinancialManagementSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="bg-gradient-to-br from-[#95c6f6] to-[#f8e3d0]  rounded-3xl p-6"
+          className="bg-muted rounded-3xl p-6"
         >
           <img
             src="/images/project_budget.jpg"

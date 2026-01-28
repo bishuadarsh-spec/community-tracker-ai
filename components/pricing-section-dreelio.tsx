@@ -101,7 +101,7 @@ export function PricingSectionDreelio() {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-gray-700">
-                    <Check className="w-5 h-5 text-green-600" />
+                    <Check className="w-5 h-5 text-foreground" />
                     {feature}
                   </li>
                 ))}

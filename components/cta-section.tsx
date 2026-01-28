@@ -82,7 +82,7 @@ export function CTASection() {
   return (
     <section
       ref={ref}
-      className="w-full py-10 md:py-20 px-4 relative flex flex-col justify-center items-center overflow-hidden bg-blue-50"
+      className="w-full py-10 md:py-20 px-4 relative flex flex-col justify-center items-center overflow-hidden bg-muted"
     >
       {/* ☁️ CLOUD LEFT */}
       <img
@@ -100,7 +100,7 @@ export function CTASection() {
         className="absolute right-0 top-52 w-[260px] opacity-90 z-10 pointer-events-none"
       />
       <motion.div
-        className="absolute top-0 left-1/4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+        className="absolute top-0 left-1/4 w-72 h-72 bg-gray-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
         animate={{ x: [0, 30, 0], y: [0, 20, 0] }}
         transition={{
           duration: 8,
@@ -109,7 +109,7 @@ export function CTASection() {
         }}
       />
       <motion.div
-        className="absolute bottom-0 right-1/4 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+        className="absolute bottom-0 right-1/4 w-72 h-72 bg-gray-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
         animate={{ x: [0, -30, 0], y: [0, -20, 0] }}
         transition={{
           duration: 10,

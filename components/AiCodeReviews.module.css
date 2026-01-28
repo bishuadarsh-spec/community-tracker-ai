@@ -125,5 +125,5 @@
 
 /* SVG stroke color */
 .aiCodeReviews[data-theme="dark"] .codeBlock svg path {
-  stroke: #22c55e;
+  stroke: hsl(var(--foreground));
 }

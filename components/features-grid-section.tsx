@@ -107,7 +107,7 @@ const featureBottomItems = [
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
+          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all"
         >
          <img
             src="/images/2nd.png"
@@ -121,7 +121,7 @@ const featureBottomItems = [
           initial={{ opacity: 0, x: 20 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all overflow-hidden"
+          className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all overflow-hidden"
         >
        <img
             src="/images/monitors.png"
@@ -144,7 +144,7 @@ const featureBottomItems = [
     <motion.div
       key={index}
       variants={itemVariants}
-      className="bg-white rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
+      className="bg-white rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all"
       whileHover={{ y: -5 }}
     >
       <img

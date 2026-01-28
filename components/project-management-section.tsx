@@ -51,11 +51,11 @@ export function ProjectManagementSection() {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case "High":
-        return "text-green-600";
+        return "text-foreground font-bold";
       case "Medium":
-        return "text-yellow-600";
+        return "text-muted-foreground font-semibold";
       case "Low":
-        return "text-red-600";
+        return "text-muted-foreground";
       default:
         return "text-gray-600";
     }
@@ -248,7 +248,7 @@ export function ProjectManagementSection() {
                   y: -4,
                   boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)",
                 }}
-                className="p-4 border-2 border-gray-100 rounded-xl hover:border-blue-200 transition-all cursor-pointer bg-white"
+                className="p-4 border-2 border-gray-100 rounded-xl hover:border-gray-300 transition-all cursor-pointer bg-white"
               >
                 <div className="flex items-center gap-2 text-2xl mb-2">
                   <feature.icon />

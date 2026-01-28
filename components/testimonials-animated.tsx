@@ -85,7 +85,7 @@ export function TestimonialsAnimated() {
               </p>
               <div className="flex items-center gap-4">
                 <Avatar>
-                  <AvatarFallback className="bg-blue-200 font-semibold">
+                  <AvatarFallback className="bg-muted font-semibold">
                     {t.initials}
                   </AvatarFallback>
                 </Avatar>
